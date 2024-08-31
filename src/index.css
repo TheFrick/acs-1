@@ -1,0 +1,82 @@
+@import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
+
+.Navbar {
+  width: 99.9%;
+  height: 10vh;
+  background: transparent;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.RightMenu {
+  display: flex;
+}
+
+.Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Logo img {
+  height: 7vh;
+}
+
+.Navigation {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 70%;
+  background: rgba(255, 252, 252, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.Navigation_link {
+  font-family: "Caecilia LT Pro", sans-serif;
+  text-decoration: none;
+  padding: 0.7rem;
+}
+
+.Navigation_link a {
+  text-decoration: none;
+  color: #2a328f;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.RightMenu {
+  height: 7vh;
+  width: 12%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.RightMenu img {
+  height: 6vh;
+}
+
+.RightMenu button {
+  width: 85%;
+  height: 5vh;
+  font-family: "Caecilia LT Pro", sans-serif;
+  color: #fff;
+  border: none;
+  background-color: #2a328f;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+}

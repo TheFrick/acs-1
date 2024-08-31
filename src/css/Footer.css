@@ -1,0 +1,159 @@
+.Footer {
+  width: 99.9%;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+}
+
+.Footer_box1 {
+  height: 60%;
+  width: 99.9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Footer_box2 {
+  height: 40%;
+  width: 99.9%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  text-align: center;
+  align-items: center;
+}
+
+.Footer_subscribe {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  gap: 1.1rem;
+}
+
+.Footer_subscribe_banner {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 2rem;
+  gap: 1rem;
+  background: url("../assets/Footer/Subscribe.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  height: 70%;
+  border-radius: 20px;
+}
+
+.Footer_subscribe_banner h1 {
+  color: #2a328f;
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-weight: 400;
+}
+
+.Footer_subscribe_banner_form {
+  position: relative;
+  display: inline-block;
+  width: 35%;
+}
+
+.Footer_subscribe_banner_form input {
+  width: 100%;
+  padding: 1.5rem;
+  height: 2rem;
+  border: none;
+  border-radius: 20px;
+}
+
+.Footer_subscribe_banner_form input::placeholder {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.Footer_subscribe_banner_form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  height: 2rem;
+  background-color: #2a328f;
+  color: #fff;
+  width: 40%;
+  height: 80%;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.Footer_subscribe_banner_nav {
+  display: flex;
+  padding: 1.1rem;
+}
+
+.Footer_subscribe_banner_nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer_subscribe_banner_nav_navigation {
+  display: flex;
+  width: 43%;
+  justify-content: space-between;
+  padding: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.Footer_subscribe_banner_nav_navigation a {
+  text-decoration: none;
+  color: black;
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 1.1rem;
+}
+
+.Footer_subscribe_banner_nav_socials {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.Footer_subscribe_banner_nav_socials img {
+  height: 2rem;
+}
+
+.Footer_box2_box1 {
+  color: black;
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 1.1rem;
+}
+
+.Footer_box2_box2 img {
+  height: 5rem;
+}
+
+.Footer_box2_box3 {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 1.1rem;
+  gap: 1rem;
+}
+
+.Footer_box2_innerBox {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}

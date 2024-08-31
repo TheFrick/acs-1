@@ -1,0 +1,250 @@
+@import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
+@import url("https://fonts.cdnfonts.com/css/gotham-9");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.HomePage_banner {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  background: url("../assets/Home/bannerbg.png");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10vh;
+}
+
+.Homepage_desc {
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  margin-bottom: 10vh;
+  padding: 2rem;
+}
+
+.Homepage_desc h1 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  color: #2a328f;
+  font-size: 2.5rem;
+}
+
+.Homepage_desc p {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.Homepage_memberships {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 10vh;
+}
+
+.Homepage_memberships_heading {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  height: 20%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Homepage_memberships_heading h1 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 3rem;
+  color: #2a328f;
+  font-weight: 600;
+}
+
+.Homepage_memberships_heading p {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.Homepage_memberships_cards {
+  height: 60%;
+  display: flex;
+  width: 99.9%;
+  justify-content: space-around;
+}
+
+.Homepage_memberships_cards_card {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 100%;
+  justify-content: space-around;
+  box-shadow: 0 0 20px #0000001a;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.Homepage_card_box1 {
+  display: flex;
+  gap: 1rem;
+}
+
+.Homepage_card_box1_price1 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  background: rgb(188, 218, 227);
+  color: rgb(0, 181, 242);
+  border-radius: 20px;
+  padding: 0.7rem;
+}
+
+.Homepage_card_box1_price2 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  background: rgb(180, 236, 180);
+  color: rgb(32, 232, 32);
+  border-radius: 20px;
+  padding: 0.7rem;
+}
+
+.Homepage_card_box2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Homepage_card_box2 h3 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 2rem;
+  color: #2a328f;
+}
+
+.Homepage_card_box2 img {
+  height: 1.6rem;
+}
+
+.Homepage_card_box3 {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.Homepage_card_box3 li {
+  color: rgb(72, 70, 70);
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+}
+
+.Homepage_memberships_button button {
+  margin-top: 3rem;
+  width: 30vw;
+  border-radius: 10px;
+  border: none;
+  background-color: #2a328f;
+  color: #fff;
+  font-family: "Gowtham-9", sans-serif;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.Home_Ourstrength {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  margin-bottom: 10vh;
+}
+
+.Home_Ourstrength_heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f1f5f9;
+  width: 100%;
+  height: 30vh;
+  gap: 1rem;
+}
+
+.Home_Ourstrength_heading h1 {
+  color: #2a328f;
+  font-size: 3rem;
+  font-family: "Caecilia LT Pro", sans-serif;
+}
+
+.Home_Ourstrength_heading h2 {
+  color: #2a328f;
+  font-size: 2rem;
+  font-family: "Caecilia LT Pro", sans-serif;
+  width: 90%;
+}
+
+.Home_Ourstrength_heading p {
+  color: black;
+  font-size: 1.5rem;
+  font-family: "Caecilia LT Pro", sans-serif;
+  width: 90%;
+}
+
+.Home_Ourstrength_calendar {
+  background: url("../assets/Home/Calendar.png");
+  height: 60vh;
+  width: 100%;
+}
+
+.Homepage_join {
+  height: 70vh;
+  width: 99.9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+.Home_join_innerBox {
+  width: 75%;
+  height: 100%;
+  background: url("../assets/Home/Calendar1.png");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.Home_join_innerBox h1 {
+  font-size: 2.5rem;
+  font-family: "Caecilia LT Pro", sans-serif;
+  color: #fff;
+}
+
+.Home_join_innerBox button {
+  font-family: "Caecilia LT Pro", sans-serif;
+  color: #fff;
+  border: none;
+  background-color: #2a328f;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  width: 15vw;
+  height: 5vh;
+}
