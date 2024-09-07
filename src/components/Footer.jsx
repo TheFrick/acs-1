@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
                     <div className="Footer_subscribe_banner_nav">
                         <div className="Footer_subscribe_banner_nav_navigation">
-                            <a href="">About us</a><a href="">Memberships</a><a href="">Staff</a><a href="">Gallery</a><a href="">A+ squash</a><a href="">Contact us</a>
+                            <a href="">About us</a><a href="">Memberships</a><a href="">Staff</a><a href="">A+ squash</a><a href="">Contact us</a>
                         </div>
                         <div className="Footer_subscribe_banner_nav_socials">
                             <img src={instagram} alt="" /><img src={facebook} alt="" /><img src={youtube} alt="" />

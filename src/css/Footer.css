@@ -1,13 +1,17 @@
 .Footer {
-  width: 99.9%;
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  min-height: 50vh;
+  width: 100%;
+}
+
+.Footer_box1,
+.Footer_box2 {
+  width: 100%;
 }
 
 .Footer_box1 {
-  height: 60%;
-  width: 99.9%;
+  flex: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,13 +20,12 @@
 }
 
 .Footer_box2 {
-  height: 40%;
-  width: 99.9%;
+  flex: 2;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin-top: 2rem;
   text-align: center;
-  align-items: center;
 }
 
 .Footer_subscribe {
@@ -39,10 +42,7 @@
   text-align: left;
   padding: 2rem;
   gap: 1rem;
-  background: url("../assets/Footer/Subscribe.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: none;
+  background: url("../assets/Footer/Subscribe.png") center/cover no-repeat;
   height: 70%;
   border-radius: 20px;
 }
@@ -51,102 +51,100 @@
   color: #2a328f;
   font-family: "Caecilia LT Pro", sans-serif;
   font-weight: 400;
+  font-size: clamp(1rem, 1.6rem, 2rem);
 }
 
 .Footer_subscribe_banner_form {
   position: relative;
   display: inline-block;
-  width: 35%;
+  width: 100%;
+  max-width: 400px;
 }
 
 .Footer_subscribe_banner_form input {
   width: 100%;
-  padding: 1.5rem;
-  height: 2rem;
+  padding: 0.8em;
+  height: 2.5em;
   border: none;
   border-radius: 20px;
-}
-
-.Footer_subscribe_banner_form input::placeholder {
   font-family: "Caecilia LT Pro", sans-serif;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
 }
 
 .Footer_subscribe_banner_form button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.25em;
+  right: 0.25em;
+  width: 40%;
+  height: calc(100% - 0.5em);
   border: none;
-  background-color: transparent;
-  cursor: pointer;
-  height: 2rem;
+  border-radius: 10px;
   background-color: #2a328f;
   color: #fff;
-  width: 40%;
-  height: 80%;
-  border-radius: 10px;
-  margin-top: 0.5rem;
   font-family: "Caecilia LT Pro", sans-serif;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  cursor: pointer;
 }
 
 .Footer_subscribe_banner_nav {
   display: flex;
-  padding: 1.1rem;
-}
-
-.Footer_subscribe_banner_nav {
-  width: 100%;
-  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  padding: 1.1rem;
+  width: 100%;
 }
 
 .Footer_subscribe_banner_nav_navigation {
   display: flex;
-  width: 43%;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 600px;
   justify-content: space-between;
   padding: 0.5rem;
   align-items: center;
-  text-align: center;
 }
 
 .Footer_subscribe_banner_nav_navigation a {
   text-decoration: none;
   color: black;
   font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 1.1rem;
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  cursor: pointer;
+  margin: 0.25em 0;
 }
 
 .Footer_subscribe_banner_nav_socials {
-  width: 10%;
+  width: 100%;
+  max-width: 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
+  margin-top: 1rem;
 }
 
 .Footer_subscribe_banner_nav_socials img {
-  height: 2rem;
+  height: 1.5rem;
+  width: auto;
+  cursor: pointer;
 }
 
-.Footer_box2_box1 {
+.Footer_box2_box1,
+.Footer_box2_box3 {
   color: black;
   font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 1.1rem;
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
 }
 
 .Footer_box2_box2 img {
-  height: 5rem;
+  height: 3rem;
+  width: auto;
 }
 
 .Footer_box2_box3 {
   display: flex;
   justify-content: space-between;
-  color: black;
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 1.1rem;
   gap: 1rem;
 }
 
@@ -155,5 +153,76 @@
   width: 60%;
   justify-content: space-around;
   align-items: center;
-  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .Footer_subscribe_banner_form {
+    width: 100%;
+  }
+
+  .Footer_box2 {
+    flex-direction: column;
+  }
+  .Footer_subscribe_banner h1 {
+    color: #2a328f;
+    font-family: "Caecilia LT Pro", sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.5rem, 1.2rem, 1.5rem);
+  }
+  .Footer_subscribe_banner_form input {
+    width: 100%;
+    padding: 0.8em;
+    height: 2.5em;
+    border: none;
+    border-radius: 17px;
+    font-family: "Caecilia LT Pro", sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.5rem, 0.8rem, 1.5rem);
+  }
+  .Footer_subscribe_banner_form button {
+    position: absolute;
+    top: 0.25em;
+    right: 0.25em;
+    width: 40%;
+    height: calc(100% - 0.5em);
+    border: none;
+    border-radius: 10px;
+    background-color: #2a328f;
+    color: #fff;
+    font-family: "Caecilia LT Pro", sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.5rem, 0.7rem, 1rem);
+    cursor: pointer;
+  }
+  .Footer_subscribe_banner_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    max-width: 99.99%;
+  }
+  .Footer_subscribe_banner_nav_navigation {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-between;
+    width: 45%;
+    max-width: none;
+    align-items: start;
+  }
+  .Footer_subscribe_banner_nav_socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 11vh;
+    align-items: end;
+  }
+  .Footer_box2_innerBox {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
 }

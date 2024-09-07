@@ -1,0 +1,312 @@
+@import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
+@import url("https://fonts.cdnfonts.com/css/gotham-9");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --primary-color: #2a328f;
+  --text-color: #484646;
+  --white: #fff;
+  --shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.aboutPage {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.aboutPage_banner {
+  height: 55vh;
+  background: url("../assets/about/banner.png") center/cover no-repeat;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.aboutPage_banner_heading {
+  position: absolute;
+  bottom: 3rem;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.aboutPage_banner_heading h1 {
+  color: var(--white);
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(2rem, 3rem, 4rem);
+  position: absolute;
+  z-index: 1;
+}
+
+.aboutPage_story {
+  height: auto;
+  width: 100%;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.aboutPage_story_img {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutPage_story_img img {
+  width: 80%;
+  height: auto;
+}
+
+.aboutPage_story_content {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.aboutPage_story_content_heading {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  color: var(--primary-color);
+}
+
+.aboutPage_story_content_text {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.8rem);
+  text-align: justify;
+  width: 90%;
+}
+
+.aboutPage_box {
+  height: auto;
+  width: 100%;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f1f5f9;
+  padding: 2rem;
+}
+
+.aboutPage_box_image {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.aboutPage_box_image img {
+  height: auto;
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.aboutPage_box_image h2 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  color: #2a328f;
+}
+
+.aboutPage_box_image h3 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  color: #2a328f;
+}
+
+.aboutPage_box_content {
+  flex: 1 1 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.aboutPage_box_content_icon img {
+  height: 3rem;
+}
+
+.aboutPage_box_content_heading {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1rem, 1.2rem, 1.7rem);
+  color: var(--primary-color);
+  text-align: justify;
+}
+
+.aboutPage_box_content_text {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  color: var(--primary-color);
+  text-align: justify;
+}
+
+.aboutPage_Mission {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  margin-bottom: 10vh;
+}
+
+.aboutPage_Mission_content {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.aboutPage_Mission_content_text {
+  width: 90%;
+}
+
+.aboutPage_Mission_content_text h2 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1.5rem, 2rem, 2.5rem);
+  color: var(--primary-color);
+}
+
+.aboutPage_Mission_content_text p {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  color: var(--primary-color);
+}
+
+.aboutPage_Mission_image {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.aboutPage_Mission_image img {
+  width: 90%;
+  height: auto;
+}
+
+.aboutPage_asquash {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: clamp(10vh, 12vh, 15vh);
+}
+
+.aboutPage_asquash_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutPage_asquash_image img {
+  width: 70%;
+  height: auto;
+}
+
+.aboutPage_asquash_content {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.aboutPage_asquash_content_text h2 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1.5rem, 2rem, 2.5rem);
+  color: var(--primary-color);
+}
+
+.aboutPage_asquash_content_text p {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutPage_story,
+  .aboutPage_box,
+  .aboutPage_Mission {
+    flex-direction: column;
+  }
+
+  .aboutPage_story_img,
+  .aboutPage_box_image,
+  .aboutPage_Mission_image {
+    width: 100%;
+  }
+
+  .aboutPage_story_content,
+  .aboutPage_box_content,
+  .aboutPage_Mission_content {
+    width: 100%;
+  }
+
+  .aboutPage_story_content_heading,
+  .aboutPage_box_image h2,
+  .aboutPage_Mission_content_text h3 {
+    text-align: center;
+  }
+  .aboutPage_asquash_content {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    gap: 1rem;
+    width: 100%;
+    padding: 3rem;
+  }
+  .aboutPage_story_content_text {
+    width: 99.99%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .aboutPage_banner_heading h1,
+  .aboutPage_story_content_heading {
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+  }
+
+  .aboutPage_box_image img {
+    width: 70%;
+  }
+
+  .aboutPage_asquash_image img {
+    width: 90%;
+  }
+
+  .aboutPage_story_content_text,
+  .aboutPage_asquash_content_text p {
+    font-size: clamp(1rem, 1.2rem, 1.4rem);
+  }
+}

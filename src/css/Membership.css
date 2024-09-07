@@ -1,624 +1,493 @@
 @import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
 @import url("https://fonts.cdnfonts.com/css/gotham-9");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #2a328f;
+  --text-color: #484646;
+  --white: #fff;
+  --shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.membershipPage {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .membershipPage_banner {
-  max-width: 100%;
   height: 55vh;
-  background: url("../assets/Membership/banner.png");
-  background-position: center;
-  background-repeat: none;
-  background-size: cover;
+  background: url("../assets/Membership/banner.png") center/cover no-repeat;
   position: relative;
-  margin-bottom: 10vh;
+  margin-bottom: 5rem;
 }
 
 .membershipPage_banner_heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   position: absolute;
-  bottom: 0;
-  margin-bottom: 3rem;
-  width: 99.9%;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .membershipPage_banner_heading h1 {
-  color: #fff;
+  color: var(--white);
   font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 5rem;
+  font-size: clamp(2rem, 3rem, 4rem);
 }
 
 .membershipPage_box1 {
-  height: 110vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 10vh;
+  gap: 2rem;
+  margin-bottom: 5rem;
 }
 
-.membershipPage_box1_box1 {
-  height: 50vh;
+.membershipPage_box1_box1,
+.mebershipPage_box1_box2 {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .membershipPage_box1_card {
+  flex: 1 1 300px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 20vw;
   gap: 1rem;
-  box-shadow: 0 0 20px #0000001a;
+  box-shadow: var(--shadow);
   border-radius: 20px;
   padding: 1rem;
 }
+
 .membershipPage_box1_card_img {
-  height: 50%;
-  width: 100%;
+  height: 200px;
 }
 
 .membershipPage_box1_card_img img {
-  height: 100%;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .membershipPage_box1_card_content {
   display: flex;
   flex-direction: column;
-  height: 50%;
   gap: 1rem;
 }
 
 .membershipPage_box1_card_content_price {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.membershipPage_box1_card_content_price1 {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  background: rgb(188, 218, 227);
-  color: rgb(0, 181, 242);
+.membershipPage_box1_card_content_price1,
+.membershipPage_box1_card_content_price2 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
   border-radius: 20px;
-  padding: 0.7rem;
+}
+
+.membershipPage_box1_card_content_price1 {
+  background: #e0f2fe;
+  color: #38bdf8;
 }
 
 .membershipPage_box1_card_content_price2 {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  background: rgb(180, 236, 180);
-  color: rgb(32, 232, 32);
-  border-radius: 20px;
-  padding: 0.7rem;
+  background: #dcfce7;
+  color: #16a34a;
 }
 
 .membershipPage_box1_card_content_heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
 }
 
 .membershipPage_box1_card_content_heading h1 {
   font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 1.7rem;
-  color: #2a328f;
+  font-size: clamp(0.8rem, 1.2rem, 1.6rem);
+  color: var(--primary-color);
 }
 
 .membershipPage_box1_card_content_heading img {
-  height: 1.1rem;
-}
-
-.membershipPage_box1_card_content_list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.5rem;
+  height: 0.8rem;
 }
 
 .membershipPage_box1_card_content_list li {
-  color: rgb(72, 70, 70);
-  font-family: "Inter", sans-serif;
-  font-size: 1.1rem;
-}
-
-.membershipPage_box1_box2 {
-  height: 50vh;
-}
-
-.mebershipPage_box1_box2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-}
-
-.membershipPage_wps {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-around;
-  margin-bottom: 10vh;
-}
-.membershipPage_wps_heading {
-  height: 10%;
-  width: 99.9%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.membershipPage_wps_heading h1 {
   font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 2.5rem;
+  font-size: clamp(0.8rem, 1rem, 1.3rem);
 }
 
-.membershipPage_wps_cards {
-  height: 50%;
-  width: 99.9%;
+.membershipPage_wps,
+.membershipPage_ap,
+.membershipPage_jp {
+  margin-bottom: 5rem;
+}
+
+.membershipPage_wps_heading,
+.membershipPage_ap_heading,
+.membershipPage_jp_heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.membershipPage_wps_heading h1,
+.membershipPage_ap_heading h1,
+.membershipPage_jp_heading h1 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  color: var(--primary-color);
+  font-size: clamp(1rem, 2rem, 3rem);
+}
+
+.membershipPage_wps_cards,
+.membershipPage_ap_cards,
+.membershipPage_jp_cards {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.membershipPage_wps_cards_card {
-  height: 100%;
-  width: 20vw;
+.membershipPage_wps_cards_card,
+.membershipPage_ap_cards_card,
+.membershipPage_jp_cards_card {
+  flex: 1 1 300px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  box-shadow: 0 0 40px #0000001a;
-  padding: 2rem;
   gap: 1rem;
+  box-shadow: var(--shadow);
   border-radius: 30px;
+  padding: 1.5rem;
 }
 
-.membershipPage_wps_cards_card_img {
-  width: 100%;
-  height: 60%;
+.membershipPage_wps_cards_card_img,
+.membershipPage_ap_cards_img,
+.membershipPage_jp_cards_img {
+  height: 200px;
 }
 
-.membershipPage_wps_cards_card_img img {
+.membershipPage_wps_cards_card_img img,
+.membershipPage_ap_cards_img img,
+.membershipPage_jp_cards_img img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.membershipPage_wps_cards_card_caption,
+.membershipPage_wps_cards_card_name,
+.membershipPage_ap_cards_title,
+.membershipPage_jp_cards_title {
+  font-family: "Caecilia LT Pro", sans-serif;
 }
 
 .membershipPage_wps_cards_card_caption {
-  text-align: left;
   color: #8a8c8e;
-  font-size: 1.1rem;
-  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.5rem, 0.9rem, 1rem);
 }
 
-.membershipPage_wps_cards_card_name {
-  text-align: left;
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 1.8rem;
+.membershipPage_wps_cards_card_name,
+.membershipPage_ap_cards_title h1,
+.membershipPage_jp_cards_title h1 {
+  color: var(--primary-color);
+  font-size: clamp(0.8rem, 1.2rem, 1.6rem);
   font-weight: 600;
 }
 
-.membershipPage_wps_cards_card_price {
+.membershipPage_wps_cards_card_price,
+.membershipPage_ap_cards_prices,
+.membershipPage_jp_cards_prices {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+.membershipPage_wps_cards_card_price1,
+.membershipPage_wps_cards_card_price2,
+.membershipPage_wps_cards_card_price3,
+.membershipPage_ap_cards_prices_priceBox,
+.membershipPage_jp_cards_prices_priceBox {
+  font-size: 0.8rem;
+  border-radius: 20px;
+  padding: 0.5rem 0.7rem;
 }
 
 .membershipPage_wps_cards_card_price1 {
   background: #ffedd5;
   color: #fb923c;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  border-radius: 20px;
-  padding: 0.7rem;
 }
 
 .membershipPage_wps_cards_card_price2 {
   background: #e0f2fe;
   color: #38bdf8;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  border-radius: 20px;
-  padding: 0.7rem;
-}
-.membershipPage_wps_cards_card_price3 {
-  color: #16a34a;
-  background-color: #dcfce7;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  border-radius: 20px;
-  padding: 0.7rem;
 }
 
-.membershipPage_wps_cards_card_button {
+.membershipPage_wps_cards_card_price3,
+.membershipPage_ap_cards_prices_priceBox,
+.membershipPage_jp_cards_prices_priceBox {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.membershipPage_wps_cards_card_button,
+.membershipPage_jp_cards_button {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 0.5rem;
 }
 
-.membershipPage_wps_cards_card_button h1 {
+.membershipPage_wps_cards_card_button h1,
+.membershipPage_jp_cards_button h3 {
   font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-size: clamp(0.5rem, 1rem, 1.3rem);
   font-weight: 600;
 }
 
-.membershipPage_wps_cards_card_button img {
-  height: 1rem;
+.membershipPage_wps_cards_card_button img,
+.membershipPage_jp_cards_button img {
+  height: 0.8rem;
 }
 
-.membershipPage_wps_button {
-  margin-top: 10vh;
-  width: 99.9%;
-}
-
-.membershipPage_wps_button button {
-  width: 20vw;
-  border-radius: 10px;
+.membershipPage_wps_button button,
+.membershipPage_Sc_content_list button,
+.membershipPage_SQ_internalBox button,
+.memberShip_junioCamp_internalBox_button button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem auto 0;
+  padding: 0.8rem;
   border: none;
-  background-color: #2a328f;
-  color: #fff;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: var(--white);
   font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 1.5rem;
-  padding: 0.7rem;
-  font-weight: 400;
-  font-size: 1.3rem;
+  font-size: clamp(0.5rem, 1rem, 1.3rem);
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.membershipPage_ap {
-  width: 99.9%;
-  height: 55vh;
-  margin-bottom: 15vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.membershipPage_ap_heading {
-  width: 99.9%;
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.membershipPage_ap_heading h1 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 2.5rem;
-}
-
-.membershipPage_ap_cards {
-  width: 99.9%;
-  height: 80%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.membershipPage_ap_cards_card {
-  height: 100%;
-  box-shadow: 0 0 20px #0000001a;
-  width: 20vw;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border-radius: 30px;
-  padding: 2rem;
-}
-
-.membershipPage_ap_cards_img {
-  height: 50%;
-}
-
-.membershipPage_ap_cards_img img {
-  width: 100%;
-  height: 100%;
-}
-
-.membershipPage_ap_cards_title {
-  width: 100%;
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 1rem;
-}
-
-.membershipPage_ap_cards_prices {
-  display: flex;
-}
-
-.membershipPage_ap_cards_prices_priceBox {
-  color: #16a34a;
-  background-color: #dcfce7;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  border-radius: 20px;
-  padding: 0.7rem;
-}
-
-.membershipPage_ap_cards_list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.membershipPage_ap_cards_list li {
-  color: rgb(72, 70, 70);
-  font-family: "Inter", sans-serif;
-  font-size: 1.3rem;
-}
-
-.membershipPage_jp {
-  width: 99.9%;
-  height: 55vh;
-  margin-bottom: 15vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.membershipPage_jp_heading {
-  width: 99.9%;
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.membershipPage_jp_heading h1 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 2.5rem;
-}
-
-.membershipPage_jp_cards {
-  width: 99.9%;
-  height: 80%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.membershipPage_jp_cards_card {
-  height: 100%;
-  box-shadow: 0 0 20px #0000001a;
-  width: 20vw;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border-radius: 30px;
-  padding: 1rem;
-}
-
-.membershipPage_jp_cards_img {
-  height: 50%;
-}
-
-.membershipPage_jp_cards_img img {
-  width: 100%;
-  height: 100%;
-}
-
-.membershipPage_jp_cards_title {
-  width: 100%;
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 1rem;
-}
-
-.membershipPage_jp_cards_prices {
-  display: flex;
-}
-
-.membershipPage_jp_cards_prices_priceBox {
-  color: #16a34a;
-  background-color: #dcfce7;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  border-radius: 20px;
-  padding: 0.7rem;
+.membershipPage_wps_button button:hover,
+.membershipPage_Sc_content_list button:hover,
+.membershipPage_SQ_internalBox button:hover,
+.memberShip_junioCamp_internalBox_button button:hover {
+  background-color: #3a43b8;
 }
 
 .membershipPage_jp_cards_list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  height: 40%;
-}
-
-.membershipPage_jp_cards_list li {
-  color: rgb(72, 70, 70);
-  font-family: "Inter", sans-serif;
-  font-size: 1.3rem;
-}
-
-.membershipPage_jp_cards_button {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.membershipPage_jp_cards_button h3 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-.membershipPage_jp_cards_button img {
-  height: 1rem;
-}
-
-.membershipPage_Sc {
-  height: 80vh;
-  margin-bottom: 10vh;
+  height: 50%;
 }
 
 .membershipPage_Sc_heading {
-  height: 10vh;
-  width: 99.9%;
-  height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 3vh;
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.8rem, 1.2rem, 1.6rem);
+  color: var(--primary-color);
 }
 
-.membershipPage_Sc_heading h1 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 2.5rem;
+.membershipPage_Sc {
+  margin-bottom: 5rem;
 }
 
 .membershipPage_Sc_content {
-  width: 99.9%;
-  height: 90%;
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .membershipPage_Sc_content_img {
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.membershipPage_Sc_content_list {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: space-evenly;
+  flex: 1 1 300px;
+  padding-left: 2rem;
 }
 
 .membershipPage_Sc_content_img img {
   width: 90%;
-  height: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.membershipPage_Sc_content_list {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-around;
 }
 
 .membershipPage_Sc_content_list_item {
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: left;
   gap: 1rem;
+  width: 90%;
 }
 
 .membershipPage_Sc_content_list_item img {
-  height: 4rem;
+  width: 3rem;
+  height: auto;
 }
 
-.membershipPage_Sc_content_list_item {
-  font-size: 1.5rem;
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
+.membershipPage_Sc_content_list_item p {
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
 }
 
 .membershipPage_Sc_content_list h1 {
-  font-size: 1.6rem;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
+  color: var(--primary-color);
   font-weight: 900;
 }
 
 .membershipPage_Sc_content_list button {
-  width: 40%;
-  background-color: #2a328f;
-  color: #fff;
-  font-size: 1.3rem;
-  font-family: "Caecilia LT Pro", sans-serif;
-  padding: 1rem;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
+  margin: 0 0 0 0;
 }
 
-.membershipPage_SQ {
-  height: 100vh;
-  margin-bottom: 5vh;
+.membershipPage_SQ,
+.memberShip_junioCamp {
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
-.membershipPage_SQ_internalBox {
-  height: 70vh;
+.memberShip_junioCamp {
+  margin-bottom: 3rem;
+}
+
+.membershipPage_SQ_internalBox,
+.memberShip_junioCamp_internalBox {
   width: 90%;
-  background: url("../assets/Membership/memberBanner.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+  max-width: 1200px;
+  height: 70vh;
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 2rem;
+  border-radius: 30px;
 }
 
-.membershipPage_SQ_internalBox h1 {
-  width: 50%;
-  font-size: 4rem;
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #fff;
-  font-weight: 900;
-}
-
-.membershipPage_SQ_internalBox button {
-  width: 20%;
-  background-color: #2a328f;
-  color: #fff;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-family: "Caecilia LT Pro", sans-serif;
-  border-radius: 20px;
-  border: none;
-}
-
-.memberShip_junioCamp {
-  height: 100vh;
-  margin-bottom: 5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.membershipPage_SQ_internalBox {
+  background-image: url("../assets/Membership/memberBanner.png");
+  background-position: left;
 }
 
 .memberShip_junioCamp_internalBox {
-  height: 70vh;
-  width: 80%;
-  background: url("../assets/Membership/juniorCamp.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("../assets/Membership/juniorCamp.png");
   background-position: center;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-radius: 50px;
+  background-size: contain;
 }
 
-.memberShip_junioCamp_internalBox_button {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 50;
-  padding-bottom: 2rem;
-}
-
-.memberShip_junioCamp_internalBox_button button {
-  background-color: #2a328f;
-  color: #fff;
-  padding: 1rem;
-  font-size: 1.1rem;
+.membershipPage_SQ_internalBox h1 {
   font-family: "Caecilia LT Pro", sans-serif;
-  width: 100%;
-  width: 20%;
-  border: none;
+  font-size: clamp(2rem, 3rem, 4rem);
+  color: var(--white);
+  font-weight: 900;
+  max-width: 800px;
+}
+
+.memberShip_junioCamp_internalBox_button1 {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .membershipPage_banner_heading h1,
+  .membershipPage_SQ_internalBox h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .membershipPage_box1_card_content_price,
+  .membershipPage_wps_cards_card_price,
+  .membershipPage_ap_cards_prices,
+  .membershipPage_jp_cards_prices {
+    flex-direction: column;
+  }
+  .membershipPage_box1_card_content_price1,
+  .membershipPage_box1_card_content_price2 {
+    font-family: "Caecilia LT Pro", sans-serif;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-align: center;
+  }
+  .membershipPage_wps_cards_card_price1,
+  .membershipPage_wps_cards_card_price2,
+  .membershipPage_wps_cards_card_price3,
+  .membershipPage_ap_cards_prices_priceBox,
+  .membershipPage_jp_cards_prices_priceBox {
+    font-size: 0.8rem;
+    border-radius: 20px;
+    padding: 0.5rem 0.7rem;
+    text-align: center;
+  }
+  .membershipPage_Sc_content_list {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .memberShip_junioCamp_internalBox {
+    background-image: url("../assets/Membership/juniorCampMobile.png");
+    background-position: center;
+    background-size: contain;
+  }
+  .memberShip_junioCamp_internalBox_button {
+    display: none;
+  }
+  .memberShip_junioCamp {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .memberShip_junioCamp_internalBox_button1 {
+    display: block;
+  }
+  .memberShip_junioCamp_internalBox_button1 button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto 0;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-family: "Caecilia LT Pro", sans-serif;
+    font-size: clamp(0.5rem, 1rem, 1.3rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 }

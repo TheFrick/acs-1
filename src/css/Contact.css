@@ -1,0 +1,242 @@
+@import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
+@import url("https://fonts.cdnfonts.com/css/gotham-9");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --primary-color: #2a328f;
+  --text-color: #484646;
+  --background-light: #f1f5f9;
+  --blue-light: #e0f2fe;
+  --blue-text: #38bdf8;
+  --green-light: #dcfce7;
+  --green-text: #16a34a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
+.contactPage_banner {
+  height: 55vh;
+  background: url("../assets/Home/bannerbg.png");
+  position: relative;
+  margin-bottom: 10vh;
+}
+
+.contactPage_banner_heading {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.contactPage_banner_heading h1 {
+  color: var(--white);
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(2rem, 3rem, 4rem);
+}
+
+.contactPage_box {
+  height: max-content;
+  width: 99.9%;
+  display: flex;
+  margin-bottom: 10vh;
+  justify-content: center;
+}
+
+.contactPage_box_details {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.contactPage_box_form {
+  width: 50%;
+}
+
+.contactPage_box_details_list {
+  width: 70%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contactPage_box_details_list_item {
+  display: flex;
+  gap: 1rem;
+}
+
+.contactPage_box_details_list_item_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactPage_box_details_list_item_content h3 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.8rem, 1.2rem, 1.5rem);
+  color: #2a328f;
+}
+
+.contactPage_box_details_list_item_icon img {
+  height: 3rem;
+}
+
+.contactPage_box_details_list_item_content p {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.8rem, 1rem, 1.3rem);
+  width: 90%;
+}
+
+.contactPage_box_form {
+  display: flex;
+  align-items: center;
+}
+
+.contactPage_box_form_internalBox {
+  width: 60%;
+  height: max-content;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 40px #0000001a;
+  padding: 2rem;
+  border-radius: 50px;
+}
+
+.contactPage_box_form_internalBox h1 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  color: #2a328f;
+  font-weight: 900;
+  height: 10%;
+  margin-bottom: 1rem;
+}
+
+.contactPage_box_form_internalBox_form {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contactPage_box_form_internalBox_form button {
+  width: 90%;
+  padding: 1rem;
+  background-color: #2a328f;
+  color: #fff;
+  font-family: "Caecilia LT Pro", sans-serif;
+  border: none;
+  border-radius: 20px;
+}
+
+.contactPage_box_form_internalBox_form_inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.contactPage_box_form_internalBox_form_inputContainer input {
+  width: 90%;
+  padding: 15px 15px 15px 60px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.8rem, 1rem, 1.3rem);
+}
+
+.contactPage_box_form_internalBox_form_inputContainer img {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1.6rem;
+  width: 1.7rem;
+}
+
+.contactPage_box_form_internalBox_form_inputContainer input::placeholder {
+  color: #999;
+  font-size: clamp(0.8rem, 1rem, 1.3rem);
+}
+
+.contactPage_box_form_internalBox_form {
+  gap: 20px;
+}
+
+.contactPage_box_form_internalBox_form_textField textarea {
+  width: 95%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.8rem, 1rem, 1.3rem);
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contactPage_box_form_internalBox_form button {
+  padding: 15px 30px;
+  font-size: clamp(0.8rem, 1rem, 1.3rem);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.contactPage_box_form_internalBox_form button:hover {
+  background-color: #1a237e;
+}
+
+.ContactPage_maps {
+  margin-bottom: 10vh;
+}
+
+@media screen and (max-width: 768px) {
+  .contactPage_banner_heading h1 {
+    color: var(--white);
+    font-family: "Caecilia LT Pro", sans-serif;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    z-index: -1;
+  }
+  .contactPage_box {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .contactPage_box_details_list {
+    width: 94%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .contactPage_box_details_list_item {
+    display: flex;
+    gap: 1rem;
+    width: 90vw;
+  }
+  .contactPage_box_form {
+    display: flex;
+    width: 99.9vw;
+    align-items: center;
+    justify-content: center;
+  }
+  .contactPage_box_form_internalBox {
+    width: 90%;
+    height: max-content;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 40px #0000001a;
+    padding: 2rem;
+    border-radius: 50px;
+  }
+}

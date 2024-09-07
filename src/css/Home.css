@@ -2,213 +2,202 @@
 @import url("https://fonts.cdnfonts.com/css/gotham-9");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+:root {
+  --primary-color: #2a328f;
+  --text-color: #484646;
+  --background-light: #f1f5f9;
+  --blue-light: #e0f2fe;
+  --blue-text: #38bdf8;
+  --green-light: #dcfce7;
+  --green-text: #16a34a;
+}
+
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
 .HomePage_banner {
   height: 100vh;
-  width: 100vw;
-  max-width: 100%;
-  background: url("../assets/Home/bannerbg.png");
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 10vh;
+  width: 100%;
+  background: url("../assets/Home/bannerbg.png") center/cover no-repeat;
+  position: relative;
 }
 
 .Homepage_desc {
-  height: 25vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 4rem 2rem;
   text-align: center;
-  gap: 2rem;
-  margin-bottom: 10vh;
-  padding: 2rem;
+  font-family: "Caecilia LT Pro", sans-serif;
 }
 
 .Homepage_desc h1 {
   font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-size: clamp(1rem, 1.5rem, 3rem);
+  margin-bottom: 1rem;
 }
 
 .Homepage_desc p {
   font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .Homepage_memberships {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  margin-bottom: 10vh;
+  padding: 4rem 2rem;
 }
 
 .Homepage_memberships_heading {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 1rem;
-  height: 20%;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .Homepage_memberships_heading h1 {
   font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 3rem;
-  color: #2a328f;
-  font-weight: 600;
+  color: var(--primary-color);
+  font-size: clamp(1rem, 1.5rem, 3rem);
+  margin-bottom: 1rem;
 }
 
 .Homepage_memberships_heading p {
   font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
 }
 
 .Homepage_memberships_cards {
-  height: 60%;
   display: flex;
-  width: 99.9%;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .Homepage_memberships_cards_card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  width: 30vw;
-  height: 100%;
-  justify-content: space-around;
-  box-shadow: 0 0 20px #0000001a;
-  border-radius: 20px;
-  padding: 1rem;
+  gap: 1rem;
 }
 
 .Homepage_card_box1 {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.Homepage_card_box1_price1,
+.Homepage_card_box1_price2 {
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
 }
 
 .Homepage_card_box1_price1 {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  background: rgb(188, 218, 227);
-  color: rgb(0, 181, 242);
-  border-radius: 20px;
-  padding: 0.7rem;
+  background: var(--blue-light);
+  color: var(--blue-text);
 }
 
 .Homepage_card_box1_price2 {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  background: rgb(180, 236, 180);
-  color: rgb(32, 232, 32);
-  border-radius: 20px;
-  padding: 0.7rem;
+  background: var(--green-light);
+  color: var(--green-text);
 }
 
 .Homepage_card_box2 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .Homepage_card_box2 h3 {
   font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 2rem;
-  color: #2a328f;
-}
-
-.Homepage_card_box2 img {
-  height: 1.6rem;
-}
-
-.Homepage_card_box3 {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  gap: 0.5rem;
+  font-size: clamp(0.8rem, 1.2rem, 1.6rem);
+  color: var(--primary-color);
 }
 
 .Homepage_card_box3 li {
-  color: rgb(72, 70, 70);
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
+  color: var(--text-color);
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  list-style-type: none;
+  margin-bottom: 0.5rem;
 }
 
-.Homepage_memberships_button button {
+.Homepage_memberships_button {
+  text-align: center;
   margin-top: 3rem;
-  width: 30vw;
-  border-radius: 10px;
-  border: none;
-  background-color: #2a328f;
+}
+
+.Homepage_memberships_button button,
+.Home_join_innerBox button {
+  background-color: var(--primary-color);
   color: #fff;
-  font-family: "Gowtham-9", sans-serif;
-  font-size: 1.5rem;
-  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: 0.8rem;
+}
+
+.Homepage_memberships_button button:hover,
+.Home_join_innerBox button:hover {
+  background-color: #3a43a5;
 }
 
 .Home_Ourstrength {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  margin-bottom: 10vh;
+  padding: 4rem 2rem;
 }
 
 .Home_Ourstrength_heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--background-light);
+  padding: 3rem 2rem;
   text-align: center;
-  background-color: #f1f5f9;
-  width: 100%;
-  height: 30vh;
-  gap: 1rem;
 }
 
 .Home_Ourstrength_heading h1 {
-  color: #2a328f;
-  font-size: 3rem;
+  color: var(--primary-color);
   font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1rem, 2rem, 3rem);
+  margin-bottom: 1rem;
 }
 
 .Home_Ourstrength_heading h2 {
-  color: #2a328f;
-  font-size: 2rem;
   font-family: "Caecilia LT Pro", sans-serif;
-  width: 90%;
+  font-size: clamp(0.8rem, 1.2rem, 1.6rem);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .Home_Ourstrength_heading p {
-  color: black;
-  font-size: 1.5rem;
   font-family: "Caecilia LT Pro", sans-serif;
-  width: 90%;
+  font-size: clamp(0.8rem, 1.2rem, 1.6rem);
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .Home_Ourstrength_calendar {
-  background: url("../assets/Home/Calendar.png");
+  background: url("../assets/Home/Calendar.png") center/cover no-repeat;
   height: 60vh;
-  width: 100%;
+  margin-top: 2rem;
 }
 
 .Homepage_join {
-  height: 70vh;
-  width: 99.9%;
+  height: 80vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -216,35 +205,44 @@
 }
 
 .Home_join_innerBox {
-  width: 75%;
-  height: 100%;
-  background: url("../assets/Home/Calendar1.png");
-  background-repeat: none;
-  background-position: center;
-  background-size: cover;
-  border-radius: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 1rem;
+  border-radius: 50px;
+  padding: 4rem 2rem;
+  height: 100%;
+  width: 90%;
+  background: url("../assets/Home/Calendar1.png") center/cover no-repeat;
 }
 
 .Home_join_innerBox h1 {
-  font-size: 2.5rem;
   font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(1rem, 1.6rem, 2rem);
   color: #fff;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.Home_join_innerBox button {
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #fff;
-  border: none;
-  background-color: #2a328f;
-  border-radius: 50px;
-  font-size: 1.3rem;
-  cursor: pointer;
-  width: 15vw;
-  height: 5vh;
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .Homepage_memberships_cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Homepage_memberships_cards_card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .Home_join_innerBox {
+    padding: 2rem 1rem;
+  }
 }

@@ -1,146 +1,288 @@
 @import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
 @import url("https://fonts.cdnfonts.com/css/gotham-9");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #2a328f;
+  --font-primary: "Caecilia LT Pro", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+}
+
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-secondary);
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
 
 .StaffPage_banner {
   max-width: 100%;
   height: 55vh;
-  background: url("../assets/Staff/banner.png");
-  background-position: center;
-  background-repeat: none;
-  background-size: cover;
+  background: url("../assets/Staff/banner.png") center/cover no-repeat;
   position: relative;
-  margin-bottom: 10vh;
+  margin-bottom: 5rem;
 }
 
 .StaffPage_banner_heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   position: absolute;
-  bottom: 0;
-  margin-bottom: 3rem;
-  width: 99.9%;
+  bottom: 1.5rem;
+  width: 100%;
+  text-align: center;
 }
 
 .StaffPage_banner_heading h1 {
   color: #fff;
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 5rem;
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 3rem, 4rem);
+  margin: 0;
 }
 
-.staffPage_box {
-  height: 50vh;
+.staffPage_box,
+.staffPage_box_right {
   display: flex;
-  margin-bottom: 5vh;
+  flex-wrap: wrap;
+  height: max-content;
+  margin-bottom: 2.5rem;
+  width: 60%;
 }
 
-.staffPage_box_image {
+.staffPage_box_image,
+.staffPage_box_right_image {
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-}
-
-.staffPage_box_image img {
-  height: 90%;
-}
-
-.staffPage_box_content {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.staffPage_box_content_headers h1,
-.staffPage_box_right_content_headers h1 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 3rem;
-}
-
-.staffPage_box_right_content_headers h3,
-.staffPage_box_content_headers h3 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: #2a328f;
-  font-size: 2rem;
-}
-
-.staffPage_box_content_list,
-.staffPage_box_right_list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.staffPage_box_right_list_listItem,
-.staffPage_box_right_list_listItem {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.staffPage_box_content_list_listItem,
-.staffPage_box_right_list_listItem {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.staffPage_box_content_list_listItem img,
-.staffPage_box_right_list_listItem img {
-  height: 2vh;
-}
-
-.staffPage_box_content_list_listItem p,
-.staffPage_box_right_list_listItem p {
-  font-size: 1.5rem;
-  font-family: "Caecilia LT Pro", sans-serif;
-}
-
-.staffPage_box_content_button button,
-.staffPage_box_right_content_button button {
   padding: 1rem;
-  font-size: 1.2rem;
-  font-family: "Caecilia LT Pro", sans-serif;
-  border: 2px solid gray;
-  background: #fff;
-  color: #2a328f;
-  border-radius: 20px;
 }
 
-.staffPage_box_right {
-  display: flex;
-  height: 50vh;
-  margin-bottom: 5vh;
+.staffPage_box_image img,
+.staffPage_box_right_image img {
+  max-height: 90%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
+.staffPage_box_content,
 .staffPage_box_right_content {
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.staffPage_box_right_content {
+  align-items: center;
 }
 
 .staffPage_box_right_outerListBox {
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-
+  justify-content: center;
   width: 80%;
+  max-width: 600px;
 }
 
-.staffPage_box_right_image {
-  width: 50%;
+.staffPage_box_content_headers,
+.staffPage_box_right_content_headers {
+  text-align: left;
+}
+
+.staffPage_box_content_headers h1,
+.staffPage_box_right_content_headers h1 {
+  font-family: var(--font-primary);
+  color: var(--primary-color);
+  font-size: clamp(1rem, 1.7rem, 3rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.staffPage_box_content_headers h3,
+.staffPage_box_right_content_headers h3 {
+  font-family: var(--font-primary);
+  color: var(--primary-color);
+  font-size: clamp(1rem, 1.5rem, 2.8rem);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.staffPage_box_content_list,
+.staffPage_box_right_list {
   display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.staffPage_box_right_list_listItem,
+.staffPage_box_content_list_listItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.staffPage_box_content_list_listItem {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.staffPage_box_content_list_listItem img,
+.staffPage_box_right_list_listItem img {
+  height: 1rem;
+  width: 1rem;
+}
+
+.staffPage_box_content_list_listItem p,
+.staffPage_box_right_list_listItem p {
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  font-family: var(--font-secondary);
+  margin: 0;
+}
+
+.staffPage_box_content_button,
+.staffPage_box_right_content_button {
+  margin-top: 1rem;
+}
+
+.staffPage_box_content_button button,
+.staffPage_box_right_content_button button {
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-primary);
+  border: 2px solid var(--primary-color);
+  background: #fff;
+  color: var(--primary-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: clamp(0.5rem, 0.9rem, 1.3rem);
+}
+
+.staffPage_box_content_button button:hover,
+.staffPage_box_right_content_button button:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.staffPage_box_content {
+  align-items: flex-end;
+}
+
+.staffPage_box_content_list_listItem {
+  flex-direction: row-reverse;
+  text-align: right;
+  width: 100%;
+}
+.staffPage_box_content_headers {
+  text-align: right;
+}
+.staffPage_boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.staffPage_box_right_image img {
-  height: 90%;
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  .staffPage_box {
+    flex-direction: column;
+  }
+
+  .staffPage_box_right {
+    flex-direction: column-reverse;
+  }
+  .staffPage_box,
+  .staffPage_box_right {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 50vh;
+    margin-bottom: 2.5rem;
+    width: 100%;
+  }
+
+  .staffPage_box_image,
+  .staffPage_box_right_image {
+    width: 100%;
+  }
+
+  .staffPage_box_content,
+  .staffPage_box_right_content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .staffPage_box_right_outerListBox {
+    width: 100%;
+    text-align: center;
+  }
+
+  .StaffPage_banner_heading h1 {
+    font-size: 2.5rem;
+  }
+
+  .staffPage_box_content_headers,
+  .staffPage_box_right_content_headers {
+    text-align: center;
+  }
+
+  .staffPage_box_content_button,
+  .staffPage_box_right_content_button {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .staffPage_box_right_list_listItem,
+  .staffPage_box_content_list_listItem {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .staffPage_box_right_list_listItem img,
+  .staffPage_box_content_list_listItem img {
+    display: none;
+  }
+
+  .staffPage_box_content_headers h3,
+  .staffPage_box_right_content_headers h3 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+
+  .StaffPage_banner_heading h1 {
+    font-size: 2rem;
+  }
 }

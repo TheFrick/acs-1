@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import '../css/Membership.css'
 import card1 from '../assets/Home/card1.png'
-import icon from '../assets/Home/icon.png'
+import icon from '../assets/Home/Icon.png'
 import card2 from '../assets/Home/card2.png'
 import card3 from '../assets/Home/card3.png'
 import card4 from '../assets/Membership/ssm.png'
@@ -464,7 +464,9 @@ const Memberships = () => {
                     <div className="memberShip_junioCamp_internalBox_button">
                         <button>Sign up now</button>
                     </div>
-
+                </div>
+                <div className="memberShip_junioCamp_internalBox_button1">
+                    <button>Sign up now</button>
                 </div>
             </div>
             <Footer />
