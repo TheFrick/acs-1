@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import '../css/Contact.css'
@@ -10,22 +10,46 @@ import inputMail from '../assets/Contact/Vector2.png'
 import inputPhone from '../assets/Contact/Vector3.png'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+import client, { urlFor } from '../sanity/sanityClient';
+import Loading from '../components/Loading';
 
 
 
 const Contact = () => {
 
+    const [pageData, setPageData] = useState(null);
     const centerPosition = [33.81118653135519, -84.42035678566103];
     const googleMapsUrl = `https://www.google.com/maps?q=${centerPosition[0]},${centerPosition[1]}`;
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const result = await client.fetch('*[_type == "contactPage"][0]');
+                setPageData(result);
+                console.log(result);
+            } catch (error) {
+                console.error('Error fetching data from Sanity:', error);
+            }
+        };
+
+        fetchData();
+        const subscription = client.listen(`*[_type == "contactPage"]`).subscribe((update) => {
+            if (update.result) {
+                setPageData(update.result);
+            }
+        });
+        return () => subscription.unsubscribe();
+    }, []);
+
+    if (!pageData) return <Loading />;
 
 
     return (
         <div className='contactPage'>
-            <div className="contactPage_banner">
+            <div className="contactPage_banner" style={{ backgroundImage: `url(${urlFor(pageData.bannerImage).url()})` }}>
                 <Navbar />
                 <div className="contactPage_banner_heading">
-                    <h1>Contact Us</h1>
+                    <h1>{pageData.bannerHeading}</h1>
                 </div>
             </div>
             <div className="contactPage_box">
@@ -46,7 +70,7 @@ const Contact = () => {
                             </div>
                             <div className="contactPage_box_details_list_item_content">
                                 <h3>Call us</h3>
-                                <p>404.500.2145</p>
+                                <p>{pageData.phone}</p>
                             </div>
                         </div>
                         <div className="contactPage_box_details_list_item">
@@ -55,7 +79,7 @@ const Contact = () => {
                             </div>
                             <div className="contactPage_box_details_list_item_content">
                                 <h3>Email us</h3>
-                                <p>admin@atlantacommunitysquash.org</p>
+                                <p>{pageData.email}</p>
                             </div>
                         </div>
                     </div>

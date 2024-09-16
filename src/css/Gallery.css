@@ -1,0 +1,404 @@
+@import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
+@import url("https://fonts.cdnfonts.com/css/gotham-9");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #2a328f;
+  --text-color: #484646;
+  --white: #fff;
+  --shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  --secondary: #f1f5f9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.galleryPage {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.galleryPage_banner {
+  height: 55vh;
+  background: center/cover no-repeat;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.galleryPage_banner_heading {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.galleryPage_banner_heading h1 {
+  color: var(--white);
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(2rem, 3rem, 4rem);
+}
+
+.galleryPage_gallery {
+  width: 100%;
+  height: max-content;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.galleryPage_gallery_nav {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.galleryPage_gallery_nav h3 {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  font-family: "Gotham 9", sans-serif;
+  font-size: 1rem;
+}
+
+.galleryPage_gallery_nav h3:hover {
+  color: var(--primary-color);
+}
+
+.galleryPage_gallery_nav h3.active,
+.galleryPage_gallery_nav h3.active:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: bold;
+}
+
+.galleryPage_gallery_images {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galleryPage_gallery_images_gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.galleryPage_gallery_images_gallery div {
+  display: contents;
+}
+
+.galleryPage_gallery_images_gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.galleryPage_gallery_images_gallery img:hover {
+  transform: scale(1.05);
+}
+
+.galleryPage_review {
+  width: 100%;
+  margin-bottom: 10vh;
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.galleryPage_review_heading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.galleryPage_review_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galleryPage_review_reviews {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.galleryPage_review_reviews::-webkit-scrollbar {
+  display: none;
+}
+
+.galleryPage_review_reviews_box {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  padding: 1rem;
+}
+
+.galleryPage_review_reviews_box_img {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.galleryPage_review_reviews_box_img img {
+  max-height: 300px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.galleryPage_review_reviews_box_content {
+  width: 60%;
+  padding-left: 2rem;
+}
+
+.galleryPage_review_reviews_box_content_text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.galleryPage_review_reviews_box_content_text p {
+  font-size: clamp(1rem, 1.25rem, 1.5rem);
+}
+
+.galleryPage_review_reviews_box_content_text img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.galleryPage_review_reviews_box_content_author {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.galleryPage_review_navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.galleryPage_review_navigation button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Gotham 9", sans-serif;
+  transition: opacity 0.3s ease;
+}
+
+.galleryPage_review_navigation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.galleryPage_podcast {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: #e4e4e7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.galleryPage_podcast_heading {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.galleryPage_podcast_heading h1 {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  color: var(--primary-color);
+  font-family: "Gotham 9", sans-serif;
+}
+
+.galleryPage_podcast_main {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 3rem;
+}
+
+.gallery_podcast_main_box {
+  display: flex;
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.gallery_podcast_main_box_image {
+  width: 30%;
+  min-height: 250px;
+}
+
+.gallery_podcast_main_box_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery_podcast_main_box_content {
+  width: 70%;
+  padding: 2rem;
+}
+
+.gallery_podcast_main_box_content h3 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.gallery_podcast_main_box_content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.gallery_podcast_main_box_content p {
+  margin-bottom: 1rem;
+}
+
+.gallery_podcast_main_box_content audio {
+  width: 100%;
+}
+
+.galleryPage_podcast_suggestions {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.galleryPage_podcast_suggestions h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.galleryPage_podcast_suggestions_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.galleryPage_podcast_suggestion_item {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.galleryPage_podcast_suggestion_item:hover {
+  transform: translateY(-5px);
+}
+
+.galleryPage_podcast_suggestion_item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.galleryPage_podcast_suggestion_item_content {
+  padding: 1rem;
+}
+
+.galleryPage_podcast_suggestion_item_content h4 {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.galleryPage_podcast_suggestion_item_content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.galleryPage_podcast_suggestion_item_content p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .gallery_podcast_main_box {
+    flex-direction: column;
+  }
+
+  .gallery_podcast_main_box_image,
+  .gallery_podcast_main_box_content {
+    width: 100%;
+  }
+
+  .gallery_podcast_main_box_image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galleryPage_podcast_suggestions_list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .galleryPage_gallery_images_gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .galleryPage_gallery_images_gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryPage_review_reviews_box {
+    flex-direction: column;
+  }
+
+  .galleryPage_review_reviews_box_img,
+  .galleryPage_review_reviews_box_content {
+    width: 100%;
+  }
+
+  .galleryPage_review_reviews_box_content {
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .galleryPage_gallery_images_gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .galleryPage_gallery_nav {
+    flex-wrap: wrap;
+  }
+}

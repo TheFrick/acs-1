@@ -28,7 +28,7 @@ body {
 
 .membershipPage_banner {
   height: 55vh;
-  background: url("../assets/Membership/banner.png") center/cover no-repeat;
+  background: center/cover no-repeat;
   position: relative;
   margin-bottom: 5rem;
 }
@@ -318,6 +318,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  height: max-content;
 }
 
 .membershipPage_Sc_content_img {
@@ -327,7 +328,7 @@ body {
 
 .membershipPage_Sc_content_img img {
   width: 90%;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
 }
 
@@ -367,8 +368,7 @@ body {
   margin: 0 0 0 0;
 }
 
-.membershipPage_SQ,
-.memberShip_junioCamp {
+.membershipPage_SQ {
   height: 80vh;
   display: flex;
   justify-content: center;
@@ -376,6 +376,10 @@ body {
 }
 
 .memberShip_junioCamp {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 3rem;
 }
 
@@ -397,8 +401,8 @@ body {
 }
 
 .membershipPage_SQ_internalBox {
-  background-image: url("../assets/Membership/memberBanner.png");
-  background-position: left;
+  background: center/cover;
+  background-repeat: no-repeat;
 }
 
 .memberShip_junioCamp_internalBox {
@@ -457,18 +461,17 @@ body {
     justify-content: space-around;
     align-items: center;
   }
-  .memberShip_junioCamp_internalBox {
-    background-image: url("../assets/Membership/juniorCampMobile.png");
-    background-position: center;
-    background-size: contain;
-  }
   .memberShip_junioCamp_internalBox_button {
     display: none;
   }
+
   .memberShip_junioCamp {
-    margin-bottom: 3rem;
+    height: 25vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
     gap: 1rem;
   }
 

@@ -1,44 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/Home.css';
 import Navbar from '../components/Navbar';
-import card1 from '../assets/Home/card1.png';
-import card2 from '../assets/Home/card2.png';
-import card3 from '../assets/Home/card3.png';
-import icon from '../assets/Home/Icon.png';
 import Footer from '../components/Footer';
-import { Menu } from 'lucide-react';
+import client, { urlFor } from '../sanity/sanityClient';
+import icon from '../assets/Home/Icon.png';
+import Loading from '../components/Loading';
 
 const HomePage = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [data, setData] = useState(null);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    useEffect(() => {
+        const fetchData = async () => {
+            const homepageData = await client.fetch(`*[_type == "homepage"][0]`);
+            setData(homepageData);
+        };
 
-    const membershipCards = [
-        { img: card1, title: 'Individual', price: { monthly: 105, annually: 1100 }, features: ['Access to court reservation'] },
-        { img: card2, title: 'Family', price: { monthly: 145, annually: 1380 }, features: ['Access to court reservation', '7/ Week'] },
-        { img: card3, title: 'Juniors', price: { monthly: 70, annually: 660 }, features: ['Juniors 22 and below', '7/ Week'] },
-    ];
+        fetchData();
+        const subscription = client.listen(`*[_type == "homepage"]`).subscribe((update) => {
+            if (update.result) {
+                setData(update.result);
+            }
+        });
+
+        return () => subscription.unsubscribe();
+    }, []);
+
+    if (!data) {
+        return <Loading />;
+    }
+
+    const {
+        homepageBanner,
+        homepageDescHeading,
+        homepageDescText,
+        membershipsHeading,
+        membershipsDescription,
+        membershipCards,
+        ourStrengthHeading,
+        ourStrengthSubheading,
+        ourStrengthDescription,
+        ourStrengthImage,
+        joinHeading,
+        joinText,
+        joinButtonText,
+        joinBackgroundImage,
+    } = data;
 
     return (
         <div className="HomePage">
-            <div className="HomePage_banner">
+            <div className="HomePage_banner" style={{
+                backgroundImage: homepageBanner ? `url(${urlFor(homepageBanner)})` : 'none'
+            }}>
                 <Navbar />
             </div>
+
             <div className="Homepage_desc">
-                <h1>ACS is a world-class facility and Atlanta's only community-based squash facility. We are on a mission to support and empower Atlanta's diverse population.</h1>
-                <p>Comprising five singles courts and one hardball doubles court, ACS provides affordable access to squash in Atlanta for all levels of play and is the new home of A+ Squash, an Atlanta-based nonprofit organization that transforms the lives of young people through the sport of squash and ongoing educational support.</p>
+                <h1>{homepageDescHeading}</h1>
+                <p>{homepageDescText}</p>
             </div>
+
             <div className="Homepage_memberships">
                 <div className="Homepage_memberships_heading">
-                    <h1>Featured Memberships</h1>
-                    <p>Members enjoy exclusive access to camps, programs, and more.</p>
+                    <h1>{membershipsHeading}</h1>
+                    <p>{membershipsDescription}</p>
                 </div>
                 <div className="Homepage_memberships_cards">
-                    {membershipCards.map((card, index) => (
+                    {membershipCards?.map((card, index) => (
                         <div key={index} className="Homepage_memberships_cards_card">
-                            <img src={card.img} alt={card.title} />
+
+                            <img src={urlFor(card.image)} alt={card.title} />
                             <div className="Homepage_card_box1">
                                 <div className="Homepage_card_box1_price1">${card.price.monthly}/Monthly</div>
                                 <div className="Homepage_card_box1_price2">${card.price.annually}/Annually</div>
@@ -48,7 +78,7 @@ const HomePage = () => {
                                 <img src={icon} alt="icon" />
                             </div>
                             <div className="Homepage_card_box3">
-                                {card.features.map((feature, i) => (
+                                {card.features?.map((feature, i) => (
                                     <li key={i}>{feature}</li>
                                 ))}
                             </div>
@@ -61,18 +91,25 @@ const HomePage = () => {
             </div>
             <div className="Home_Ourstrength">
                 <div className="Home_Ourstrength_heading">
-                    <h1>Our strength lies in diversity</h1>
-                    <h2>We organize community events with a purpose: social gatherings, tournaments, and leagues for all ages and skill levels, proceeds from these go to support our A+ program. </h2>
-                    <p>Our experienced coaching staff offer personalized lessons all days of the week from beginners to college aspirants.</p>
+                    <h1>{ourStrengthHeading}</h1>
+                    <h2>{ourStrengthSubheading}</h2>
+                    <p>{ourStrengthDescription}</p>
                 </div>
-                <div className="Home_Ourstrength_calendar"></div>
+                <div className="Home_Ourstrength_calendar" style={{
+                    backgroundImage: ourStrengthImage ? `url(${urlFor(ourStrengthImage)})` : 'none'
+                }}></div>
             </div>
-            <div className="Homepage_join">
-                <div className="Home_join_innerBox">
-                    <h1>Join us at our club, built by generous donors who envisioned an affordable community squash center.</h1>
-                    <button>Sign up now</button>
+
+            <div className="Homepage_join" >
+                <div className="Home_join_innerBox" style={{
+                    backgroundImage: joinBackgroundImage ? `url(${urlFor(joinBackgroundImage)})` : 'none'
+                }}>
+                    <h1>{joinHeading}</h1>
+                    <button>{joinButtonText}</button>
                 </div>
             </div>
+
+
             <Footer />
         </div>
     );
