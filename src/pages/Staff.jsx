@@ -32,6 +32,8 @@ const Staff = () => {
         return <Loading />;
     }
 
+    const visibleMembers = pageData?.members?.filter(member => member.isVisible !== false);
+
     return (
         <div className='staffPage'>
             <div
@@ -44,7 +46,7 @@ const Staff = () => {
                 </div>
             </div>
             <div className="staffPage_boxes">
-                {pageData?.members?.map((member, index) => (
+                {visibleMembers?.map((member, index) => (
                     index % 2 === 0 ? (
                         <div className="staffPage_box" key={index}>
                             <div className="staffPage_box_image">

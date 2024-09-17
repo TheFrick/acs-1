@@ -31,17 +31,23 @@ const HomePage = () => {
 
     const {
         homepageBanner,
+        showDescHeading,
         homepageDescHeading,
+        showDescText,
         homepageDescText,
+        showMembershipsHeading,
         membershipsHeading,
+        showMembershipsDescription,
         membershipsDescription,
+        showMembershipCards,
         membershipCards,
+        showOurStrengthSection,
         ourStrengthHeading,
         ourStrengthSubheading,
         ourStrengthDescription,
         ourStrengthImage,
+        showJoinSection,
         joinHeading,
-        joinText,
         joinButtonText,
         joinBackgroundImage,
     } = data;
@@ -55,61 +61,69 @@ const HomePage = () => {
             </div>
 
             <div className="Homepage_desc">
-                <h1>{homepageDescHeading}</h1>
-                <p>{homepageDescText}</p>
+                {showDescHeading && <h1>{homepageDescHeading}</h1>}
+                {showDescText && <p>{homepageDescText}</p>}
             </div>
 
             <div className="Homepage_memberships">
                 <div className="Homepage_memberships_heading">
-                    <h1>{membershipsHeading}</h1>
-                    <p>{membershipsDescription}</p>
+                    {showMembershipsHeading && <h1>{membershipsHeading}</h1>}
+                    {showMembershipsDescription && <p>{membershipsDescription}</p>}
                 </div>
-                <div className="Homepage_memberships_cards">
-                    {membershipCards?.map((card, index) => (
-                        <div key={index} className="Homepage_memberships_cards_card">
-
-                            <img src={urlFor(card.image)} alt={card.title} />
-                            <div className="Homepage_card_box1">
-                                <div className="Homepage_card_box1_price1">${card.price.monthly}/Monthly</div>
-                                <div className="Homepage_card_box1_price2">${card.price.annually}/Annually</div>
+                {showMembershipCards && (
+                    <div className="Homepage_memberships_cards">
+                        {membershipCards?.map((card, index) => (
+                            <div key={index} className="Homepage_memberships_cards_card">
+                                <img src={urlFor(card.image)} alt={card.title} />
+                                <div className="Homepage_card_box1">
+                                    <div className="Homepage_card_box1_price1">${card.price.monthly}/Monthly</div>
+                                    <div className="Homepage_card_box1_price2">${card.price.annually}/Annually</div>
+                                </div>
+                                <div className="Homepage_card_box2">
+                                    <h3>{card.title}</h3>
+                                    <img src={icon} alt="icon" />
+                                </div>
+                                <div className="Homepage_card_box3">
+                                    {card.features?.map((feature, i) => (
+                                        <li key={i}>{feature}</li>
+                                    ))}
+                                </div>
                             </div>
-                            <div className="Homepage_card_box2">
-                                <h3>{card.title}</h3>
-                                <img src={icon} alt="icon" />
-                            </div>
-                            <div className="Homepage_card_box3">
-                                {card.features?.map((feature, i) => (
-                                    <li key={i}>{feature}</li>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
                 <div className="Homepage_memberships_button">
                     <button>Explore More!</button>
                 </div>
             </div>
-            <div className="Home_Ourstrength">
-                <div className="Home_Ourstrength_heading">
-                    <h1>{ourStrengthHeading}</h1>
-                    <h2>{ourStrengthSubheading}</h2>
-                    <p>{ourStrengthDescription}</p>
-                </div>
-                <div className="Home_Ourstrength_calendar" style={{
-                    backgroundImage: ourStrengthImage ? `url(${urlFor(ourStrengthImage)})` : 'none'
-                }}></div>
-            </div>
+            {showOurStrengthSection && (
+                <>
+                    <div className="Home_Ourstrength">
+                        <div className="Home_Ourstrength_heading">
+                            <h1>{ourStrengthHeading}</h1>
+                            <h2>{ourStrengthSubheading}</h2>
+                            <p>{ourStrengthDescription}</p>
+                        </div>
+                        <div className="Home_Ourstrength_calendar" style={{
+                            backgroundImage: ourStrengthImage ? `url(${urlFor(ourStrengthImage)})` : 'none'
+                        }}></div>
+                    </div>
+                </>
+            )}
+            {
+                showJoinSection &&
+                <>
+                    <div className="Homepage_join" >
+                        <div className="Home_join_innerBox" style={{
+                            backgroundImage: joinBackgroundImage ? `url(${urlFor(joinBackgroundImage)})` : 'none'
+                        }}>
+                            <h1>{joinHeading}</h1>
+                            <button>{joinButtonText}</button>
+                        </div>
+                    </div>
+                </>
 
-            <div className="Homepage_join" >
-                <div className="Home_join_innerBox" style={{
-                    backgroundImage: joinBackgroundImage ? `url(${urlFor(joinBackgroundImage)})` : 'none'
-                }}>
-                    <h1>{joinHeading}</h1>
-                    <button>{joinButtonText}</button>
-                </div>
-            </div>
-
-
+            }
             <Footer />
         </div>
     );

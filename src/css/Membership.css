@@ -419,11 +419,217 @@ body {
   max-width: 800px;
 }
 
-.memberShip_junioCamp_internalBox_button1 {
-  display: none;
+.membershipPage_event_banner {
+  height: 100vh;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.membershipPage_event_banner_internalBox {
+  height: 90%;
+  width: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+}
+.membershipPage_event_banner_internalBox_box1 {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.membershipPage_event_banner_internalBox_box1 h1 {
+  color: var(--white);
+  font-size: clamp(2rem, 2.5rem, 3rem);
+  font-family: "Caecilia LT Pro", sans-serif;
+}
+
+.membershipPage_event_banner_internalBox_box1 h3 {
+  color: var(--white);
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  font-weight: 400;
+  font-family: "Caecilia LT Pro", sans-serif;
+}
+
+.membershipPage_event_banner_internalBox_box1 button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.5rem, 1rem, 1.3rem);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.membershipPage_event_banner_internalBox_box2 {
+  height: 70%;
+  width: 95%;
+  display: flex;
+}
+
+.membershipPage_event_banner_internalBox_box2_box1 {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.membershipPage_event_banner_internalBox_box2_box2 {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.membershipPage_event_banner_internalBox_box2_box1_card {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: max-content;
+  height: max-content;
+  padding: 1rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--white);
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.5rem, 1rem, 1.3rem);
+}
+
+.membershipPage_event_banner_internalBox_box2_box2_list {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  gap: 0.7rem;
+  padding: 0.5rem;
+  height: max-content;
+}
+
+.membershipPage_event_banner_internalBox_box2_box2_list {
+  color: var(--white);
+  font-family: "Caecilia LT Pro", sans-serif;
+}
+
+.membershipPage_event_banner_internalBox_box2_box2_list_item {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  color: var(--white);
+  font-family: "Caecilia LT Pro", sans-serif;
+  font-size: clamp(0.5rem, 1rem, 1.3rem);
 }
 
 @media screen and (max-width: 480px) {
+  .membershipPage_event_banner_internalBox {
+    height: max-content;
+    width: 95%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+  }
+
+  .membershipPage_event_banner_internalBox_box1 {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .membershipPage_event_banner_internalBox_box1 button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-family: "Caecilia LT Pro", sans-serif;
+    font-size: clamp(0.5rem, 1rem, 1.3rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.7rem;
+  }
+  .membershipPage_event_banner_internalBox_box2 {
+    height: 70%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .membershipPage_event_banner_internalBox_box2_box1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .membershipPage_event_banner_internalBox_box2_box1_card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 90%;
+    text-align: center;
+    height: max-content;
+    padding: 1rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: var(--white);
+    font-family: "Caecilia LT Pro", sans-serif;
+    font-size: clamp(0.5rem, 1rem, 1.3rem);
+  }
+  .membershipPage_event_banner {
+    height: 100vh;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .membershipPage_event_banner_internalBox_box2_box2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
   .membershipPage_banner_heading h1,
   .membershipPage_SQ_internalBox h1 {
     font-size: clamp(1.8rem, 6vw, 2.5rem);

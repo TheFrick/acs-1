@@ -187,17 +187,15 @@ body {
 }
 
 .staffPage_box_content {
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .staffPage_box_content_list_listItem {
-  flex-direction: row-reverse;
-  text-align: right;
+  flex-direction: row;
+  text-align: left;
   width: 100%;
 }
-.staffPage_box_content_headers {
-  text-align: right;
-}
+
 .staffPage_boxes {
   display: flex;
   flex-direction: column;

@@ -56,7 +56,7 @@ const About = () => {
 
             <main>
 
-                {pageData?.storySection && (
+                {pageData?.storySectionVisibility && pageData?.storySection && (
                     <section className="aboutPage_story">
                         <div className="aboutPage_story_img">
                             <img src={urlFor(pageData.storySection.image)?.url()} alt="Our Story" />
@@ -69,7 +69,7 @@ const About = () => {
                 )}
 
 
-                {pageData?.boxSection && (
+                {pageData?.boxSectionVisibility && pageData?.boxSection && (
                     <section className="aboutPage_box">
                         <div className="aboutPage_box_image">
                             <img src={urlFor(pageData.boxSection.image)?.url()} alt="Box Section Image" />
@@ -88,7 +88,7 @@ const About = () => {
                 )}
 
 
-                {pageData?.missionSection && (
+                {pageData?.missionSectionVisibility && pageData?.missionSection && (
                     <section className="aboutPage_Mission">
                         <div className="aboutPage_Mission_content">
                             <div className="aboutPage_Mission_content_text">
@@ -103,7 +103,7 @@ const About = () => {
                 )}
 
 
-                {pageData?.aSquashSection && (
+                {pageData?.aplusSquashSectionVisibility && pageData?.aSquashSection && (
                     <section className="aboutPage_asquash">
                         <div className="aboutPage_asquash_image">
                             <img src={urlFor(pageData.aSquashSection.image)?.url()} alt="A+ Squash" />
