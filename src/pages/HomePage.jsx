@@ -51,12 +51,42 @@ const HomePage = () => {
         joinButtonText,
         joinBackgroundImage,
     } = data;
+    const makeUrl = (filename) => {
+        const regex = /^file-([a-f0-9]{40})-([a-z0-9]+)$/i;
+        const match = filename.match(regex);
+        if (match) {
+            const id = match[1];
+            const extension = match[2];
+            console.log(`https://cdn.sanity.io/files/jb3wm2g5/production/${id}.${extension}`);
+            return `https://cdn.sanity.io/files/jb3wm2g5/production/${id}.${extension}`;
+        } else {
+            return null;
+        }
+    }
 
     return (
         <div className="HomePage">
             <div className="HomePage_banner" style={{
-                backgroundImage: homepageBanner ? `url(${urlFor(homepageBanner)})` : 'none'
+                backgroundUrl: homepageBanner ? `${makeUrl(homepageBanner.asset._ref)}` : 'none'
             }}>
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    className="background-video"
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        zIndex: -1,
+                    }}
+                >
+                    <source src={makeUrl(homepageBanner.asset._ref)} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
                 <Navbar />
             </div>
 
@@ -74,7 +104,7 @@ const HomePage = () => {
                     <div className="Homepage_memberships_cards">
                         {membershipCards?.map((card, index) => (
                             <div key={index} className="Homepage_memberships_cards_card">
-                                <img src={urlFor(card.image)} alt={card.title} />
+                                <img src={urlFor(card.image)} alt={card.title} className='Homepage_memberships_cards_card_img' />
                                 <div className="Homepage_card_box1">
                                     <div className="Homepage_card_box1_price1">${card.price.monthly}/Monthly</div>
                                     <div className="Homepage_card_box1_price2">${card.price.annually}/Annually</div>

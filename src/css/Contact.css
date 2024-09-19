@@ -24,7 +24,8 @@ body {
 }
 
 .contactPage_banner {
-  height: 55vh;
+  min-height: 80vh;
+  width: 100%;
   background: url("../assets/Home/bannerbg.png");
   position: relative;
   margin-bottom: 10vh;

@@ -251,7 +251,7 @@ const Memberships = () => {
                                     {
                                         pageData.eventBanner.eventBannerFeatures.map((feature, index) => (
                                             <div key={index} className="membershipPage_event_banner_internalBox_box2_box2_list_item">
-                                                <img src={eventPointer} alt="" />
+                                                <img src={eventPointer} className='membershipPage_event_banner_internalBox_box2_box2_list_item_img' alt="" />
                                                 <p>{feature}</p>
                                             </div>
                                         ))
