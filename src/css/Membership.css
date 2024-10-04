@@ -9,6 +9,10 @@
   --shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+a {
+  text-decoration: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -53,6 +57,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   margin-bottom: 5rem;
+  padding: 2rem;
 }
 
 .membershipPage_box1_box1,
@@ -83,7 +88,6 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  border: 2px solid green;
 }
 
 .membershipPage_box1_card_content {
@@ -99,7 +103,8 @@ body {
 }
 
 .membershipPage_box1_card_content_price1,
-.membershipPage_box1_card_content_price2 {
+.membershipPage_box1_card_content_price2,
+.membershipPage_box1_card_content_price_price3 {
   font-family: "Caecilia LT Pro", sans-serif;
   font-size: 0.8rem;
   padding: 0.5rem 1rem;
@@ -114,6 +119,10 @@ body {
 .membershipPage_box1_card_content_price2 {
   background: #dcfce7;
   color: #16a34a;
+}
+.membershipPage_box1_card_content_price_price3 {
+  background: #fce6dc;
+  color: #a35a16;
 }
 
 .membershipPage_box1_card_content_heading {
@@ -141,6 +150,7 @@ body {
 .membershipPage_ap,
 .membershipPage_jp {
   margin-bottom: 5rem;
+  padding: 2rem;
 }
 
 .membershipPage_wps_heading,
@@ -256,6 +266,15 @@ body {
   align-items: center;
   justify-content: flex-end;
   gap: 0.5rem;
+}
+
+.membershipPage_wps_cards_card_button a,
+.membershipPage_jp_cards_button a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  text-decoration: none;
 }
 
 .membershipPage_wps_cards_card_button h1,
@@ -644,7 +663,8 @@ body {
     flex-direction: column;
   }
   .membershipPage_box1_card_content_price1,
-  .membershipPage_box1_card_content_price2 {
+  .membershipPage_box1_card_content_price2,
+  .membershipPage_box1_card_content_price_price3 {
     font-family: "Caecilia LT Pro", sans-serif;
     font-size: 0.8rem;
     padding: 0.5rem 1rem;

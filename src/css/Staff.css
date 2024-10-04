@@ -77,8 +77,8 @@ body {
 
 .staffPage_box_image img,
 .staffPage_box_right_image img {
-  max-height: 90%;
-  max-width: 100%;
+  height: 25rem;
+  width: 25rem;
   object-fit: contain;
 }
 

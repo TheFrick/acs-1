@@ -6,6 +6,7 @@ import Logo from '../assets/Navbar/Logo.png';
 import calenderDots from '../assets/Navbar/CalendarDots.png';
 import { Menu } from 'lucide-react';
 
+
 const Navbar = () => {
     const snap = useSnapshot(state);
     const location = useLocation();
@@ -49,8 +50,9 @@ const Navbar = () => {
                 ))}
             </div>
             <div className="navbar__right-menu">
-                <img src={calenderDots} alt="Calendar Dots" />
-                <button className="navbar__button">Memberships</button>
+
+                <Link to="https://atlantacommunitysquash.playbypoint.com/book/atlantacommunitysquash"><img src={calenderDots} alt="Calendar Dots" /></Link>
+                <Link to="https://atlantacommunitysquash.playbypoint.com/f/atlantacommunitysquash/memberships"><button className="navbar__button">Memberships</button></Link>
             </div>
         </nav>
     );

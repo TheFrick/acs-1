@@ -5,9 +5,12 @@ import Footer from '../components/Footer';
 import client, { urlFor } from '../sanity/sanityClient';
 import icon from '../assets/Home/Icon.png';
 import Loading from '../components/Loading';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     const [data, setData] = useState(null);
+    const Navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -35,6 +38,7 @@ const HomePage = () => {
         homepageDescHeading,
         showDescText,
         homepageDescText,
+        membershipSectionLink,
         showMembershipsHeading,
         membershipsHeading,
         showMembershipsDescription,
@@ -50,6 +54,7 @@ const HomePage = () => {
         joinHeading,
         joinButtonText,
         joinBackgroundImage,
+        joinSectionLink
     } = data;
     const makeUrl = (filename) => {
         const regex = /^file-([a-f0-9]{40})-([a-z0-9]+)$/i;
@@ -111,7 +116,8 @@ const HomePage = () => {
                                 </div>
                                 <div className="Homepage_card_box2">
                                     <h3>{card.title}</h3>
-                                    <img src={icon} alt="icon" />
+                                    <Link to={card.link}> <img src={icon} alt="icon" /></Link>
+
                                 </div>
                                 <div className="Homepage_card_box3">
                                     {card.features?.map((feature, i) => (
@@ -123,7 +129,12 @@ const HomePage = () => {
                     </div>
                 )}
                 <div className="Homepage_memberships_button">
-                    <button>Explore More!</button>
+                    <Link to={membershipSectionLink && membershipSectionLink}>
+                        <button>
+                            Explore More!
+                        </button>
+                    </Link>
+
                 </div>
             </div>
             {showOurStrengthSection && (
@@ -148,7 +159,10 @@ const HomePage = () => {
                             backgroundImage: joinBackgroundImage ? `url(${urlFor(joinBackgroundImage)})` : 'none'
                         }}>
                             <h1>{joinHeading}</h1>
-                            <button>{joinButtonText}</button>
+                            <Link to={joinSectionLink}>
+                                <button>{joinButtonText}</button>
+                            </Link>
+
                         </div>
                     </div>
                 </>

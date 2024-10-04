@@ -5,6 +5,7 @@ import '../css/Staff.css';
 import ellipse from '../assets/Staff/Ellipse.png';
 import client, { urlFor } from '../sanity/sanityClient';
 import Loading from '../components/Loading';
+import { Link } from 'react-router-dom';
 
 const Staff = () => {
     const [pageData, setPageData] = useState(null);
@@ -70,7 +71,8 @@ const Staff = () => {
                                     ))}
                                 </div>
                                 <div className="staffPage_box_content_button">
-                                    <button>Sign up Now</button>
+
+                                    <Link to={member.link}><button>Sign up Now</button></Link>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +93,7 @@ const Staff = () => {
                                         ))}
                                     </div>
                                     <div className="staffPage_box_right_content_button">
-                                        <button>Sign up Now</button>
+                                        <Link to={member.link}><button>Sign up Now</button></Link>
                                     </div>
                                 </div>
                             </div>

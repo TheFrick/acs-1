@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import client, { urlFor } from '../sanity/sanityClient';
@@ -96,31 +96,33 @@ const Gallery = () => {
                             </h3>
                         ))}
                     </div>
-                    <div className="galleryPage_gallery_images">
-                        {selectedTab === "All" ? (
-                            <div className='galleryPage_gallery_images_gallery'>
-                                {pageData?.gallery?.filter(card => card.cardVisibility !== false).map((item, index) => (
-                                    <div key={index}>
-                                        {item.galleryImage.map((image, imgIndex) => (
-                                            <img key={imgIndex} src={urlFor(image).url()} alt="" />
-                                        ))}
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
-                            <div className='galleryPage_gallery_images_gallery'>
-                                {pageData.gallery
-                                    .filter(item => item.galleryHeading === selectedTab)
-                                    .map((item, index) => (
+                    <Suspense fallback={<h1>Loading...</h1>}>
+                        <div className="galleryPage_gallery_images">
+                            {selectedTab === "All" ? (
+                                <div className='galleryPage_gallery_images_gallery'>
+                                    {pageData?.gallery?.filter(card => card.cardVisibility !== false).map((item, index) => (
                                         <div key={index}>
                                             {item.galleryImage.map((image, imgIndex) => (
                                                 <img key={imgIndex} src={urlFor(image).url()} alt="" />
                                             ))}
                                         </div>
                                     ))}
-                            </div>
-                        )}
-                    </div>
+                                </div>
+                            ) : (
+                                <div className='galleryPage_gallery_images_gallery'>
+                                    {pageData.gallery
+                                        .filter(item => item.galleryHeading === selectedTab)
+                                        .map((item, index) => (
+                                            <div key={index}>
+                                                {item.galleryImage.map((image, imgIndex) => (
+                                                    <img key={imgIndex} src={urlFor(image).url()} alt="" />
+                                                ))}
+                                            </div>
+                                        ))}
+                                </div>
+                            )}
+                        </div>
+                    </Suspense>
                 </div>
             }
             {

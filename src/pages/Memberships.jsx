@@ -6,6 +6,7 @@ import client, { urlFor } from '../sanity/sanityClient';
 import icon from '../assets/Home/Icon.png';
 import Loading from '../components/Loading';
 import eventPointer from '../assets/Membership/Vector.png';
+import { Link } from 'react-router-dom';
 
 
 const Memberships = () => {
@@ -67,10 +68,20 @@ const Memberships = () => {
                                                 ${plan.annualPrice}/Annually
                                             </div> : null
                                         }
+                                        {
+                                            plan.initiationFee ? <div className="membershipPage_box1_card_content_price_price3">
+                                                Initiation Fee - ${plan.initiationFee}
+                                            </div> : null
+
+                                        }
+
+
+
                                     </div>
                                     <div className="membershipPage_box1_card_content_heading">
                                         <h1>{plan.title}</h1>
-                                        <img src={icon} alt="" />
+                                        <Link to={plan.link}><img src={icon} alt="" /></Link>
+
                                     </div>
                                     <div className="membershipPage_box1_card_content_list">
                                         {plan?.features.map((feature, i) => (
@@ -122,14 +133,18 @@ const Memberships = () => {
                                     )}
                                 </div>
                                 <div className="membershipPage_wps_cards_card_button">
-                                    <h1>View Coach</h1>
-                                    <img src={icon} alt="" />
+                                    <Link to={coach.link}>
+                                        <h1>View Coach</h1>
+                                        <img src={icon} alt="" />
+                                    </Link>
                                 </div>
                             </div>
                         ))}
                     </div>
                     <div className="membershipPage_wps_button">
-                        <button>{pageData.weeklyPrivateSessions.learnMoreButton}</button>
+                        <Link to={pageData.weeklyPrivateSessions.learnMoreLink}>
+                            <button>{pageData.weeklyPrivateSessions.learnMoreButton}</button>
+                        </Link>
                     </div>
                 </div>
             )}
@@ -185,8 +200,11 @@ const Memberships = () => {
                                     <li>{program.description}</li>
                                 </div>
                                 <div className="membershipPage_jp_cards_button">
-                                    <h3>{program.buttonText}</h3>
-                                    <img src={icon} alt="" />
+                                    <Link to={program.link}>
+                                        <h3>{program.buttonText}</h3>
+                                        <img src={icon} alt="" />
+                                    </Link>
+
                                 </div>
                             </div>
                         ))}
@@ -211,7 +229,8 @@ const Memberships = () => {
                                 </div>
                             ))}
                             <h1>{pageData.summerCamp.SubHeading}</h1>
-                            <button>{pageData.summerCamp.registerButtonText}</button>
+
+                            <Link to={pageData.summerCamp.registerButtonLink}><button>{pageData.summerCamp.registerButtonText}</button></Link>
                         </div>
                     </div>
                 </div>
@@ -220,7 +239,7 @@ const Memberships = () => {
                 pageData.showCallToAction && <div className="membershipPage_SQ">
                     <div className="membershipPage_SQ_internalBox" style={{ backgroundImage: `url(${urlFor(pageData.callToAction.background).url()})` }}>
                         <h1>{pageData.callToAction.text}</h1>
-                        <button>{pageData.callToAction.buttonText}</button>
+                        <Link to={pageData.callToAction.buttonLink}><button>{pageData.callToAction.buttonText}</button></Link>
                     </div>
                 </div>
             }
