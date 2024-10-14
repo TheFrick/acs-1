@@ -4,6 +4,7 @@ import instagram from '../assets/Footer/instagram.png'
 import facebook from '../assets/Footer/facebook.png'
 import youtube from '../assets/Footer/youtube.png'
 import logo from '../assets/Navbar/Logo.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -21,7 +22,7 @@ const Footer = () => {
                     </div>
                     <div className="Footer_subscribe_banner_nav">
                         <div className="Footer_subscribe_banner_nav_navigation">
-                            <a href="">About us</a><a href="">Memberships</a><a href="">Staff</a><a href="">A+ squash</a><a href="">Contact us</a>
+                            <Link to="/about">About us</Link><Link to="/membership">Memberships</Link><Link to="/staff">Staff</Link><Link to="">A+ squash</Link><Link to="/contact">Contact us</Link>
                         </div>
                         <div className="Footer_subscribe_banner_nav_socials">
                             <img src={instagram} alt="" /><img src={facebook} alt="" /><img src={youtube} alt="" />

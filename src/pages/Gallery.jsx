@@ -32,8 +32,6 @@ const Gallery = () => {
             try {
                 const result = await client.fetch('*[_type == "galleryPage"][0]');
                 setPageData(result);
-                setSelectedPodcast(result.podcast[0]);
-                console.log('Fetched gallery page data:', result);
 
             } catch (error) {
                 console.error('Error fetching data from Sanity:', error);
@@ -44,7 +42,6 @@ const Gallery = () => {
         const subscription = client.listen('*[_type == "galleryPage"]').subscribe((update) => {
             if (update.result) {
                 setPageData(update.result);
-                setSelectedPodcast(update.result.podcast[0]);
             }
         });
         return () => subscription.unsubscribe();
@@ -62,9 +59,7 @@ const Gallery = () => {
         }
     };
 
-    const handlePodcastClick = (podcast) => {
-        setSelectedPodcast(podcast);
-    };
+
 
     if (!pageData) return <Loading />;
 
@@ -161,52 +156,6 @@ const Gallery = () => {
                     </div>
                 </div>
             }
-            {
-                pageData.podcastSectionVisibility && <div className="galleryPage_podcast">
-                    <div className="galleryPage_podcast_heading">
-                        <h1>Explore Our Community Through Podcasts</h1>
-                    </div>
-                    <div className="galleryPage_podcast_main">
-                        {selectedPodcast && (
-                            <div className="gallery_podcast_main_box">
-                                <div className="gallery_podcast_main_box_image">
-                                    <img src={urlFor(selectedPodcast.bannerImg).url()} alt="Podcast banner" />
-                                </div>
-                                <div className="gallery_podcast_main_box_content">
-                                    <h3>Episode {selectedPodcast.episodeNo}: {selectedPodcast.subHead}</h3>
-                                    <h2>{selectedPodcast.name}</h2>
-                                    <p>{selectedPodcast.desc}</p>
-                                    <ReactAudioPlayer
-                                        src={makeUrl(selectedPodcast.audio.asset._ref)}
-                                        controls
-                                        type="audio" />
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                    <div className="galleryPage_podcast_suggestions">
-                        <h2>More Episodes</h2>
-                        <div className="galleryPage_podcast_suggestions_list">
-                            {pageData.podcast && pageData.podcast.slice(selectedPodcast.index).map((episode, index) => (
-                                <div
-                                    key={index}
-                                    className="galleryPage_podcast_suggestion_item"
-                                    onClick={() => handlePodcastClick(episode)}
-                                >
-                                    <img src={urlFor(episode.bannerImg).url()} alt={`Episode ${episode.episodeNo} banner`} />
-                                    <div className="galleryPage_podcast_suggestion_item_content">
-                                        <h4>Episode {episode.episodeNo}: {episode.subHead}</h4>
-                                        <h3>{episode.name}</h3>
-                                        <p>{episode.desc.substring(0, 100)}...</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            }
-
-
             <Footer />
         </div>
     );

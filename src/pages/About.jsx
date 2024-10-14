@@ -104,7 +104,7 @@ const About = () => {
 
 
                 {pageData?.aplusSquashSectionVisibility && pageData?.aSquashSection && (
-                    <section className="aboutPage_asquash">
+                    <section className="aboutPage_asquash" id="APlusSquash">
                         <div className="aboutPage_asquash_image">
                             <img src={urlFor(pageData.aSquashSection.image)?.url()} alt="A+ Squash" />
                         </div>

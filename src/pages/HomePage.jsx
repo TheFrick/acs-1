@@ -7,14 +7,22 @@ import icon from '../assets/Home/Icon.png';
 import Loading from '../components/Loading';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import ReactAudioPlayer from 'react-audio-player';
 
 const HomePage = () => {
     const [data, setData] = useState(null);
+    const [podcastData, setPodcastData] = useState(null);
+    const [selectedPodcast, setSelectedPodcast] = useState(null);
+    const [podcastSectionVisibility, setPodcastSectionVisibility] = useState(true);
     const Navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
             const homepageData = await client.fetch(`*[_type == "homepage"][0]`);
+            console.log(homepageData.podcast);
+            setPodcastData(homepageData.podcast);
+            setSelectedPodcast(homepageData.podcast[0]);
+            setPodcastSectionVisibility(homepageData.podcastSectionVisibility);
             setData(homepageData);
         };
 
@@ -62,12 +70,17 @@ const HomePage = () => {
         if (match) {
             const id = match[1];
             const extension = match[2];
-            console.log(`https://cdn.sanity.io/files/jb3wm2g5/production/${id}.${extension}`);
             return `https://cdn.sanity.io/files/jb3wm2g5/production/${id}.${extension}`;
         } else {
             return null;
         }
     }
+
+
+    const handlePodcastClick = (podcast) => {
+        setSelectedPodcast(podcast);
+    };
+
 
     return (
         <div className="HomePage">
@@ -99,6 +112,27 @@ const HomePage = () => {
                 {showDescHeading && <h1>{homepageDescHeading}</h1>}
                 {showDescText && <p>{homepageDescText}</p>}
             </div>
+
+            {
+                showJoinSection &&
+                <>
+                    <div className="Homepage_join" >
+                        <div className="Home_join_innerBox" style={{
+                            backgroundImage: joinBackgroundImage ? `url(${urlFor(joinBackgroundImage)})` : 'none'
+                        }}>
+                            <h1>{joinHeading}</h1>
+                            <Link to={joinSectionLink}>
+                                <button>{joinButtonText}</button>
+                            </Link>
+
+                        </div>
+                    </div>
+                </>
+
+            }
+
+
+
 
             <div className="Homepage_memberships">
                 <div className="Homepage_memberships_heading">
@@ -152,22 +186,50 @@ const HomePage = () => {
                 </>
             )}
             {
-                showJoinSection &&
-                <>
-                    <div className="Homepage_join" >
-                        <div className="Home_join_innerBox" style={{
-                            backgroundImage: joinBackgroundImage ? `url(${urlFor(joinBackgroundImage)})` : 'none'
-                        }}>
-                            <h1>{joinHeading}</h1>
-                            <Link to={joinSectionLink}>
-                                <button>{joinButtonText}</button>
-                            </Link>
-
+                podcastSectionVisibility && <div className="galleryPage_podcast">
+                    <div className="galleryPage_podcast_heading">
+                        <h1>Explore Our Community Through Podcasts</h1>
+                    </div>
+                    <div className="galleryPage_podcast_main">
+                        {selectedPodcast && (
+                            <div className="gallery_podcast_main_box">
+                                <div className="gallery_podcast_main_box_image">
+                                    <img src={urlFor(selectedPodcast.bannerImg).url()} alt="Podcast banner" />
+                                </div>
+                                <div className="gallery_podcast_main_box_content">
+                                    <h3>Episode {selectedPodcast.episodeNo}: {selectedPodcast.subHead}</h3>
+                                    <h2>{selectedPodcast.name}</h2>
+                                    <p>{selectedPodcast.desc}</p>
+                                    <ReactAudioPlayer
+                                        src={makeUrl(selectedPodcast.audio.asset._ref)}
+                                        controls
+                                        type="audio" />
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                    <div className="galleryPage_podcast_suggestions">
+                        <h2>More Episodes</h2>
+                        <div className="galleryPage_podcast_suggestions_list">
+                            {podcastData && podcastData.slice(selectedPodcast.index).map((episode, index) => (
+                                <div
+                                    key={index}
+                                    className="galleryPage_podcast_suggestion_item"
+                                    onClick={() => handlePodcastClick(episode)}
+                                >
+                                    <img src={urlFor(episode.bannerImg).url()} alt={`Episode ${episode.episodeNo} banner`} />
+                                    <div className="galleryPage_podcast_suggestion_item_content">
+                                        <h4>Episode {episode.episodeNo}: {episode.subHead}</h4>
+                                        <h3>{episode.name}</h3>
+                                        <p>{episode.desc.substring(0, 100)}...</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
-                </>
-
+                </div>
             }
+
             <Footer />
         </div>
     );

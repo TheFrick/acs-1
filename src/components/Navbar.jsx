@@ -27,6 +27,7 @@ const Navbar = () => {
         { to: "/gallery", label: "Gallery" },
         { to: "/about", label: "About Us" },
         { to: "/contact", label: "Contact Us" },
+        { to: "", label: "A+ Squash" }
     ];
 
     return (

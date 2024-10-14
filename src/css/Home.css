@@ -1,5 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
-@import url("https://fonts.cdnfonts.com/css/gotham-9");
+@import url(https://db.onlinewebfonts.com/c/924ee4158324c02e3e0d62e54cafd14f?family=Gotham+Book);
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
@@ -45,10 +45,11 @@ body {
 }
 
 .Homepage_desc p {
-  font-family: "Caecilia LT Pro", sans-serif;
+  font-family: "Gotham Book";
   font-size: clamp(1rem, 1.25rem, 1.5rem);
-  max-width: 1000px;
+  max-width: max-content;
   margin: 0 auto;
+  font-weight: 600;
 }
 
 .Homepage_memberships {
@@ -68,8 +69,9 @@ body {
 }
 
 .Homepage_memberships_heading p {
-  font-family: "Caecilia LT Pro", sans-serif;
+  font-family: "Gotham Book";
   font-size: clamp(1rem, 1.25rem, 1.5rem);
+  font-weight: 600;
 }
 
 .Homepage_memberships_cards {
