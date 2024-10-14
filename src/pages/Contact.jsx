@@ -12,6 +12,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import client, { urlFor } from '../sanity/sanityClient';
 import Loading from '../components/Loading';
+import emailjs from 'emailjs-com';
 
 
 
@@ -20,6 +21,11 @@ const Contact = () => {
     const [pageData, setPageData] = useState(null);
     const centerPosition = [33.81118653135519, -84.42035678566103];
     const googleMapsUrl = `https://www.google.com/maps?q=${centerPosition[0]},${centerPosition[1]}`;
+    const [Name, setName] = useState("");
+    const [mail, setMail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [message, setMessage] = useState("");
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -40,6 +46,27 @@ const Contact = () => {
         });
         return () => subscription.unsubscribe();
     }, []);
+
+    const sendEmail = () => {
+
+        emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            {
+                message: `${Name} has sent you a message through your contact form. Here's their details: \n\nName: ${Name}\nEmail: ${mail}\nPhone: ${phone}\n\nMessage: ${message}`
+            },
+            import.meta.env.VITE_EMAILJS_USER_ID
+        )
+            .then((response) => {
+                alert("Message sent successfully!");
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+            });
+    };
+
+
+
 
     if (!pageData) return <Loading />;
 
@@ -84,26 +111,26 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                <div className="contactPage_box_form">
+                <div className="contactPage_box_form" >
                     <div className="contactPage_box_form_internalBox">
                         <h1>Send a Message</h1>
                         <div className="contactPage_box_form_internalBox_form">
                             <div className="contactPage_box_form_internalBox_form_inputContainer">
                                 <img src={user} alt="" />
-                                <input type="text" placeholder='Name' />
+                                <input type="text" placeholder='Name' value={Name} onChange={(e) => setName(e.target.value)} />
                             </div>
                             <div className="contactPage_box_form_internalBox_form_inputContainer">
                                 <img src={inputMail} alt="" />
-                                <input type="text" name="" id="" placeholder="Email" />
+                                <input type="text" name="" id="" value={mail} placeholder="Email" onChange={(e) => setMail(e.target.value)} />
                             </div>
                             <div className="contactPage_box_form_internalBox_form_inputContainer">
                                 <img src={inputPhone} alt="" />
-                                <input type="text" name="" id="" placeholder="Phone" />
+                                <input type="text" name="" id="" value={phone} placeholder="Phone" onChange={(e) => setPhone(e.target.value)} />
                             </div>
                             <div className="contactPage_box_form_internalBox_form_textField">
-                                <textarea name="" id=""></textarea>
+                                <textarea name="" id="" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                             </div>
-                            <button>Submit</button>
+                            <button onClick={sendEmail}>Submit</button>
                         </div>
                     </div>
                 </div>

@@ -77,9 +77,9 @@ body {
 
 .staffPage_box_image img,
 .staffPage_box_right_image img {
-  height: 25rem;
-  width: 25rem;
-  object-fit: contain;
+  object-fit: cover;
+  width: 90%;
+  border-radius: 30px;
 }
 
 .staffPage_box_content,
@@ -115,7 +115,7 @@ body {
   color: var(--primary-color);
   font-size: clamp(1rem, 1.7rem, 3rem);
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 
 .staffPage_box_content_headers h3,
@@ -149,8 +149,8 @@ body {
 
 .staffPage_box_content_list_listItem img,
 .staffPage_box_right_list_listItem img {
-  height: 1rem;
-  width: 1rem;
+  height: 0.7rem;
+  width: 0.7rem;
 }
 
 .staffPage_box_content_list_listItem p,

@@ -19,7 +19,6 @@ const HomePage = () => {
     useEffect(() => {
         const fetchData = async () => {
             const homepageData = await client.fetch(`*[_type == "homepage"][0]`);
-            console.log(homepageData.podcast);
             setPodcastData(homepageData.podcast);
             setSelectedPodcast(homepageData.podcast[0]);
             setPodcastSectionVisibility(homepageData.podcastSectionVisibility);
@@ -27,8 +26,12 @@ const HomePage = () => {
         };
 
         fetchData();
-        const subscription = client.listen(`*[_type == "homepage"]`).subscribe((update) => {
+        const subscription = client.listen(`*[_type == "homepage"]`).subscribe(async (update) => {
             if (update.result) {
+                const homepageData = await client.fetch(`*[_type == "homepage"][0]`);
+                setPodcastData(homepageData.podcast);
+                setSelectedPodcast(homepageData.podcast[0]);
+                setPodcastSectionVisibility(homepageData.podcastSectionVisibility);
                 setData(update.result);
             }
         });
@@ -131,9 +134,6 @@ const HomePage = () => {
 
             }
 
-
-
-
             <div className="Homepage_memberships">
                 <div className="Homepage_memberships_heading">
                     {showMembershipsHeading && <h1>{membershipsHeading}</h1>}
@@ -154,9 +154,11 @@ const HomePage = () => {
 
                                 </div>
                                 <div className="Homepage_card_box3">
-                                    {card.features?.map((feature, i) => (
-                                        <li key={i}>{feature}</li>
-                                    ))}
+                                    <ul>
+                                        {card.features?.map((feature, i) => (
+                                            <li key={i}>{feature}</li>
+                                        ))}
+                                    </ul>
                                 </div>
                             </div>
                         ))}

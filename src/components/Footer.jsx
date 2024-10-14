@@ -5,8 +5,29 @@ import facebook from '../assets/Footer/facebook.png'
 import youtube from '../assets/Footer/youtube.png'
 import logo from '../assets/Navbar/Logo.png'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import emailjs from 'emailjs-com';
 
 const Footer = () => {
+
+    const [from, setFrom] = useState("");
+    const handleClick = () => {
+        emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_SUBS_ID,
+            {
+                message: from
+            },
+            import.meta.env.VITE_EMAILJS_USER_ID
+        )
+            .then((response) => {
+                alert("Message sent successfully!");
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+            });
+    }
+
     return (
         <div className='Footer'>
             <div className="Footer_box1">
@@ -14,15 +35,15 @@ const Footer = () => {
                     <div className="Footer_subscribe_banner">
                         <h1>Subscribe to our newsletters!</h1>
                         <div className="Footer_subscribe_banner_form">
-                            <input type="text" placeholder="Enter your email" />
-                            <button>
+                            <input type="text" placeholder="Enter your email" onChange={(e) => setFrom(e.target.value)} />
+                            <button onClick={handleClick}>
                                 Subscribe Now!
                             </button>
                         </div>
                     </div>
                     <div className="Footer_subscribe_banner_nav">
                         <div className="Footer_subscribe_banner_nav_navigation">
-                            <Link to="/about">About us</Link><Link to="/membership">Memberships</Link><Link to="/staff">Staff</Link><Link to="">A+ squash</Link><Link to="/contact">Contact us</Link>
+                            <Link to="/about">About us</Link><Link to="/membership">Memberships</Link><Link to="/staff">Staff</Link><Link to="/about#APlusSquash">A+ squash</Link><Link to="/contact">Contact us</Link>
                         </div>
                         <div className="Footer_subscribe_banner_nav_socials">
                             <img src={instagram} alt="" /><img src={facebook} alt="" /><img src={youtube} alt="" />

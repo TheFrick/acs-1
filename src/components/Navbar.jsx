@@ -6,11 +6,11 @@ import Logo from '../assets/Navbar/Logo.png';
 import calenderDots from '../assets/Navbar/CalendarDots.png';
 import { Menu } from 'lucide-react';
 
-
 const Navbar = () => {
     const snap = useSnapshot(state);
     const location = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scrollDirection, setScrollDirection] = useState("up");
 
     useEffect(() => {
         state.currentPage = location.pathname;
@@ -20,6 +20,28 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const handleScroll = () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll === 0) {
+            setScrollDirection("up");
+        } else if (currentScroll > prevScroll.current) {
+            setScrollDirection("down");
+        } else {
+            setScrollDirection("up");
+        }
+
+        prevScroll.current = currentScroll;
+    };
+
+
+    const prevScroll = React.useRef(window.pageYOffset);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const navItems = [
         { to: "/", label: "Home" },
         { to: "/membership", label: "Memberships" },
@@ -27,11 +49,11 @@ const Navbar = () => {
         { to: "/gallery", label: "Gallery" },
         { to: "/about", label: "About Us" },
         { to: "/contact", label: "Contact Us" },
-        { to: "", label: "A+ Squash" }
+        { to: "/about#APlusSquash", label: "A+ Squash" }
     ];
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${scrollDirection === 'down' ? 'navbar--hidden' : ''}`}>
             <div className="navbar__logo">
                 <img src={Logo} alt="Logo" />
             </div>
@@ -51,7 +73,6 @@ const Navbar = () => {
                 ))}
             </div>
             <div className="navbar__right-menu">
-
                 <Link to="https://atlantacommunitysquash.playbypoint.com/book/atlantacommunitysquash"><img src={calenderDots} alt="Calendar Dots" /></Link>
                 <Link to="https://atlantacommunitysquash.playbypoint.com/f/atlantacommunitysquash/memberships"><button className="navbar__button">Memberships</button></Link>
             </div>

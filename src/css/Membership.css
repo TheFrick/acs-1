@@ -9,6 +9,19 @@
   --shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+ul {
+  list-style-position: inside;
+}
+
+li {
+  text-indent: -1.2em;
+  padding-left: 1.8em;
+}
+
+li::marker {
+  font-size: 1em;
+}
+
 a {
   text-decoration: none;
 }
@@ -223,6 +236,10 @@ body {
   color: var(--primary-color);
   font-size: clamp(0.8rem, 1.2rem, 1.6rem);
   font-weight: 600;
+}
+
+.membershipPage_wps_cards_card_price {
+  height: 2.2rem;
 }
 
 .membershipPage_wps_cards_card_price,
@@ -654,6 +671,10 @@ body {
   .membershipPage_banner_heading h1,
   .membershipPage_SQ_internalBox h1 {
     font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .membershipPage_wps_cards_card_price {
+    height: max-content;
   }
 
   .membershipPage_box1_card_content_price,
