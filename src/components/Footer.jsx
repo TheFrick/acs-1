@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import emailjs from 'emailjs-com';
 
+
 const Footer = () => {
 
     const [from, setFrom] = useState("");
@@ -54,7 +55,7 @@ const Footer = () => {
             <div className="Footer_box2">
                 <div className="Footer_box2_innerBox">
                     <div className="Footer_box2_box1">
-                        © 2024 ACS. All rights reserved.
+                        <p>© 2024 ACS. All rights reserved.</p>
                     </div>
                     <div className="Footer_box2_box2">
                         <img src={logo} alt="" />

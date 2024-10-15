@@ -1,6 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
-@import url("https://fonts.cdnfonts.com/css/gotham-9");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://db.onlinewebfonts.com/c/924ee4158324c02e3e0d62e54cafd14f?family=Gotham+Book");
 
 :root {
   --primary-color: #2a328f;
@@ -9,6 +8,78 @@
   --nav-background: rgba(255, 252, 252, 0.5);
   --text-color: #2a328f;
   --active-text-color: #fff;
+  --heading: "Caecilia LT Pro", sans-serif;
+  --heading-size: clamp(1.2rem, 1.7rem, 2.2rem);
+  --sub-heading: "Gotham Book", sans-serif;
+  --sub-heading-size: clamp(1rem, 1.1rem, 1.5rem);
+}
+
+h1 {
+  font-family: var(--heading);
+  font-size: var(--heading-size);
+}
+
+h2,
+h3,
+h4 {
+  font-family: var(--sub-heading);
+  font-size: var(--sub-heading-size);
+  font-weight: 600;
+}
+
+p,
+.galleryPage_podcast_suggestion_item_content h4 {
+  font-family: "Gotham Book";
+  font-size: clamp(0.8rem, 1rem, 1.3rem);
+}
+
+button {
+  font-family: "Gotham Book";
+}
+
+.Homepage_card_box1_price1,
+.Homepage_card_box1_price2,
+.galleryPage_podcast_suggestion_item_content h3,
+.membershipPage_box1_card_content_price1,
+.membershipPage_box1_card_content_price2,
+.membershipPage_box1_card_content_price_price3,
+.membershipPage_wps_cards_card_price1,
+.membershipPage_wps_cards_card_price2,
+.membershipPage_wps_cards_card_price3,
+.membershipPage_ap_cards_prices_priceBox,
+.membershipPage_jp_cards_prices_priceBox {
+  font-family: "Gotham Book";
+  font-size: clamp(0.5rem, 0.8rem, 1rem);
+}
+
+.membershipPage_banner_heading h1,
+.StaffPage_banner_heading h1,
+.galleryPage_banner h1,
+.aboutPage_banner_heading h1,
+.contactPage_banner_heading h1 {
+  font-family: var(--heading);
+  font-size: clamp(1.5rem, 2rem, 2.5rem);
+}
+
+li,
+.staffPage_box_right_content_button a button,
+.staffPage_box_content_button a button,
+.membershipPage_wps_cards_card_caption,
+.membershipPage_wps_cards_card_caption p {
+  font-family: "Gotham Book";
+  font-size: clamp(0.5rem, 0.8rem, 1rem);
+  font-weight: 500;
+}
+
+.gallery_podcast_main_box_content h2 {
+  margin-bottom: 0.5rem;
+}
+
+.gallery_podcast_main_box_content h2,
+h3 {
+  font-family: var(--sub-heading);
+  font-size: var(--sub-heading-size);
+  font-weight: 900;
 }
 
 .navbar {
@@ -56,8 +127,7 @@
 .navbar__link {
   text-decoration: none;
   color: var(--text-color);
-  font-weight: 700;
-  font-size: 0.9rem;
+
   padding: 0.5rem 1rem;
   border-radius: 20px;
   transition: all 0.3s ease;
@@ -104,9 +174,13 @@
 }
 
 @media (max-width: 1024px) {
+  .navbar__logo img {
+    height: 30px;
+    width: auto;
+  }
   .navbar {
     flex-wrap: wrap;
-    height: auto;
+    height: 8vh;
     padding: 10px;
   }
 
@@ -122,6 +196,84 @@
 }
 
 @media (max-width: 768px) {
+  h1 {
+    font-family: var(--heading);
+    font-size: clamp(1rem, 1.25rem, 1.5rem);
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-family: var(--sub-heading);
+    font-size: clamp(0.7rem, 0.8rem, 1rem);
+    font-weight: 600;
+  }
+  .navbar__link,
+  p,
+  .galleryPage_podcast_suggestion_item_content h4 {
+    font-family: "Gotham Book";
+    font-size: clamp(0.5rem, 0.6rem, 0.7rem);
+  }
+  .Home_join_innerBox h1 {
+    font-size: 1rem;
+  }
+
+  .membershipPage_banner_heading h1,
+  .StaffPage_banner_heading h1,
+  .galleryPage_banner h1,
+  .aboutPage_banner_heading h1,
+  .contactPage_banner_heading h1 {
+    font-family: var(--heading);
+    font-size: 1.35rem;
+  }
+
+  button {
+    font-family: "Gotham Book";
+  }
+  .Home_Ourstrength_heading h2 {
+    font-size: clamp(0.6rem, 0.8rem, 1rem);
+    text-align: justify;
+  }
+
+  .Homepage_card_box1_price1,
+  .Homepage_card_box1_price2,
+  .galleryPage_podcast_suggestion_item_content h3,
+  .membershipPage_box1_card_content_price1,
+  .membershipPage_box1_card_content_price2,
+  .membershipPage_box1_card_content_price_price3,
+  .membershipPage_wps_cards_card_price1,
+  .membershipPage_wps_cards_card_price2,
+  .membershipPage_wps_cards_card_price3,
+  .membershipPage_ap_cards_prices_priceBox,
+  .membershipPage_jp_cards_prices_priceBox,
+  .staffPage_box_right_content_button a button,
+  .staffPage_box_content_button a button {
+    font-family: "Gotham Book";
+    font-size: clamp(0.5rem, 0.65rem, 0.8rem);
+  }
+
+  li,
+  .membershipPage_wps_cards_card_caption p {
+    font-family: "Gotham Book";
+    font-size: clamp(0.6rem, 0.8rem, 1rem);
+    font-weight: 500;
+  }
+
+  .gallery_podcast_main_box_content h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery_podcast_main_box_content h2 {
+    font-family: var(--sub-heading);
+    font-size: var(--sub-heading-size);
+    font-weight: 900;
+  }
+  .gallery_podcast_main_box_content h3 {
+    font-size: clamp(0.6rem, 0.8rem, 1rem);
+    margin-bottom: 0.5rem;
+    text-align: justify;
+  }
+
   .navbar {
     flex-direction: row;
     align-items: center;
@@ -151,6 +303,7 @@
     display: flex;
     background-color: #fff;
     z-index: 100000;
+    margin: 0.5rem;
   }
 
   .navbar__link {
@@ -161,5 +314,9 @@
 
   .navbar__right-menu {
     display: none;
+  }
+  .navbar__logo img {
+    height: 30px;
+    width: auto;
   }
 }

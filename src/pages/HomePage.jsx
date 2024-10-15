@@ -8,6 +8,7 @@ import Loading from '../components/Loading';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import ReactAudioPlayer from 'react-audio-player';
+import logo from '../assets/Navbar/Logo.png'
 
 const HomePage = () => {
     const [data, setData] = useState(null);
@@ -112,8 +113,8 @@ const HomePage = () => {
             </div>
 
             <div className="Homepage_desc">
-                {showDescHeading && <h1>{homepageDescHeading}</h1>}
-                {showDescText && <p>{homepageDescText}</p>}
+                <img src={logo}></img>
+                {showDescText && <h3>{homepageDescText}</h3>}
             </div>
 
             {
@@ -137,7 +138,7 @@ const HomePage = () => {
             <div className="Homepage_memberships">
                 <div className="Homepage_memberships_heading">
                     {showMembershipsHeading && <h1>{membershipsHeading}</h1>}
-                    {showMembershipsDescription && <p>{membershipsDescription}</p>}
+                    {showMembershipsDescription && <h2>{membershipsDescription}</h2>}
                 </div>
                 {showMembershipCards && (
                     <div className="Homepage_memberships_cards">
@@ -199,8 +200,8 @@ const HomePage = () => {
                                     <img src={urlFor(selectedPodcast.bannerImg).url()} alt="Podcast banner" />
                                 </div>
                                 <div className="gallery_podcast_main_box_content">
-                                    <h3>Episode {selectedPodcast.episodeNo}: {selectedPodcast.subHead}</h3>
                                     <h2>{selectedPodcast.name}</h2>
+                                    <h3>{selectedPodcast.subHead}</h3>
                                     <p>{selectedPodcast.desc}</p>
                                     <ReactAudioPlayer
                                         src={makeUrl(selectedPodcast.audio.asset._ref)}
@@ -221,7 +222,7 @@ const HomePage = () => {
                                 >
                                     <img src={urlFor(episode.bannerImg).url()} alt={`Episode ${episode.episodeNo} banner`} />
                                     <div className="galleryPage_podcast_suggestion_item_content">
-                                        <h4>Episode {episode.episodeNo}: {episode.subHead}</h4>
+                                        <h4>{episode.subHead}</h4>
                                         <h3>{episode.name}</h3>
                                         <p>{episode.desc.substring(0, 100)}...</p>
                                     </div>

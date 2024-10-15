@@ -24,7 +24,7 @@ body {
 }
 
 .contactPage_banner {
-  min-height: 80vh;
+  min-height: 50vh;
   width: 100%;
   background: url("../assets/Home/bannerbg.png");
   position: relative;
@@ -41,8 +41,6 @@ body {
 
 .contactPage_banner_heading h1 {
   color: var(--white);
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(2rem, 3rem, 4rem);
 }
 
 .contactPage_box {
@@ -84,8 +82,6 @@ body {
 }
 
 .contactPage_box_details_list_item_content h3 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(0.8rem, 1.2rem, 1.5rem);
   color: #2a328f;
 }
 
@@ -94,8 +90,6 @@ body {
 }
 
 .contactPage_box_details_list_item_content p {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(0.8rem, 1rem, 1.3rem);
   width: 90%;
 }
 
@@ -116,8 +110,6 @@ body {
 }
 
 .contactPage_box_form_internalBox h1 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1rem, 1.5rem, 2rem);
   color: #2a328f;
   font-weight: 900;
   height: 10%;
@@ -151,8 +143,6 @@ body {
   padding: 15px 15px 15px 60px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(0.8rem, 1rem, 1.3rem);
 }
 
 .contactPage_box_form_internalBox_form_inputContainer img {
@@ -166,7 +156,6 @@ body {
 
 .contactPage_box_form_internalBox_form_inputContainer input::placeholder {
   color: #999;
-  font-size: clamp(0.8rem, 1rem, 1.3rem);
 }
 
 .contactPage_box_form_internalBox_form {
@@ -178,15 +167,13 @@ body {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(0.8rem, 1rem, 1.3rem);
+
   resize: vertical;
   min-height: 120px;
 }
 
 .contactPage_box_form_internalBox_form button {
   padding: 15px 30px;
-  font-size: clamp(0.8rem, 1rem, 1.3rem);
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
@@ -201,6 +188,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .contactPage_banner {
+    min-height: 40vh;
+  }
   .contactPage_banner_heading h1 {
     color: var(--white);
     font-family: "Caecilia LT Pro", sans-serif;

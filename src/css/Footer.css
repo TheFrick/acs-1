@@ -49,9 +49,6 @@
 
 .Footer_subscribe_banner h1 {
   color: #2a328f;
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-weight: 400;
-  font-size: clamp(1rem, 1.6rem, 2rem);
 }
 
 .Footer_subscribe_banner_form {
@@ -82,7 +79,6 @@
   border-radius: 10px;
   background-color: #2a328f;
   color: #fff;
-  font-family: "Caecilia LT Pro", sans-serif;
   font-weight: 300;
   font-size: clamp(0.5rem, 1rem, 1.5rem);
   cursor: pointer;
@@ -156,6 +152,14 @@
 }
 
 @media screen and (max-width: 480px) {
+  .Footer_subscribe {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    gap: 1.1rem;
+  }
+
   .Footer_subscribe_banner_form {
     width: 100%;
   }
@@ -165,9 +169,6 @@
   }
   .Footer_subscribe_banner h1 {
     color: #2a328f;
-    font-family: "Caecilia LT Pro", sans-serif;
-    font-weight: 600;
-    font-size: clamp(0.5rem, 1.2rem, 1.5rem);
   }
   .Footer_subscribe_banner_form input {
     width: 100%;
@@ -189,7 +190,6 @@
     border-radius: 10px;
     background-color: #2a328f;
     color: #fff;
-    font-family: "Caecilia LT Pro", sans-serif;
     font-weight: 300;
     font-size: clamp(0.5rem, 0.7rem, 1rem);
     cursor: pointer;
@@ -206,7 +206,7 @@
     flex-direction: column;
     text-align: left;
     justify-content: space-between;
-    width: 45%;
+    width: 50%;
     max-width: none;
     align-items: start;
   }
@@ -216,6 +216,8 @@
     justify-content: space-between;
     height: 11vh;
     align-items: end;
+    width: 50%;
+    gap: 1rem;
   }
   .Footer_box2_innerBox {
     display: flex;

@@ -1,6 +1,6 @@
 @import url("https://fonts.cdnfonts.com/css/caecilia-lt-pro");
-@import url(https://db.onlinewebfonts.com/c/924ee4158324c02e3e0d62e54cafd14f?family=Gotham+Book);
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url(https://db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham-Medium);
 
 :root {
   --primary-color: #2a328f;
@@ -19,13 +19,12 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
   line-height: 1.6;
   padding: 0 2rem;
 }
 
 .HomePage_banner {
-  min-height: 80vh;
+  min-height: 60vh;
   width: 100%;
   background: center/cover no-repeat;
   position: relative;
@@ -34,22 +33,18 @@ body {
 .Homepage_desc {
   padding: 4rem 2rem;
   text-align: center;
-  font-family: "Caecilia LT Pro", sans-serif;
 }
 
-.Homepage_desc h1 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  color: var(--primary-color);
-  font-size: clamp(1.5rem, 2rem, 3rem);
-  margin-bottom: 1rem;
+.Homepage_desc img {
+  height: 7vh;
 }
 
 .Homepage_desc p {
-  font-family: "Gotham Book";
-  font-size: clamp(1rem, 1.25rem, 1.5rem);
   max-width: max-content;
   margin: 0 auto;
-  font-weight: 600;
+  font-weight: 900;
+  color: var(--primary-color);
+  text-align: justify;
 }
 
 .Homepage_memberships {
@@ -62,15 +57,11 @@ body {
 }
 
 .Homepage_memberships_heading h1 {
-  font-family: "Caecilia LT Pro", sans-serif;
   color: var(--primary-color);
-  font-size: clamp(1.5rem, 2rem, 3rem);
   margin-bottom: 1rem;
 }
 
 .Homepage_memberships_heading p {
-  font-family: "Gotham Book";
-  font-size: clamp(1rem, 1.25rem, 1.5rem);
   font-weight: 600;
 }
 
@@ -105,8 +96,6 @@ body {
 
 .Homepage_card_box1_price1,
 .Homepage_card_box1_price2 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 0.9rem;
   padding: 0.5rem 1rem;
   border-radius: 20px;
 }
@@ -128,16 +117,11 @@ body {
 }
 
 .Homepage_card_box2 h3 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1.2rem, 1.4rem, 1.6rem);
   color: var(--primary-color);
 }
 
 .Homepage_card_box3 li {
   color: var(--text-color);
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
@@ -155,8 +139,6 @@ body {
   padding: 1rem 2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: 1rem;
 }
 
 .Homepage_memberships_button button:hover,
@@ -176,41 +158,38 @@ body {
 
 .Home_Ourstrength_heading h1 {
   color: var(--primary-color);
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1.5rem, 2rem, 3rem);
   margin-bottom: 1rem;
 }
 
 .Home_Ourstrength_heading h2 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1.2rem, 1.5rem, 2rem);
   color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
-.Home_Ourstrength_heading p {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1rem, 1.2rem, 1.5rem);
-  max-width: 1000px;
+.Homepage_desc p {
+  max-width: 80vw;
   margin: 0 auto;
+  font-weight: 900;
+  color: var(--primary-color);
+  text-align: center;
 }
 
 .Home_Ourstrength_calendar {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 80vh;
+  min-height: 60vh;
   width: 100%;
 }
 
 .Homepage_join {
-  height: 80vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 }
 
 .Home_join_innerBox {
@@ -222,13 +201,11 @@ body {
   border-radius: 50px;
   padding: 4rem 2rem;
   height: 100%;
-  width: 90%;
+  width: 60%;
   background: center/cover no-repeat;
 }
 
 .Home_join_innerBox h1 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1rem, 2rem, 3rem);
   color: #fff;
   margin-bottom: 2rem;
   max-width: 800px;
@@ -237,10 +214,21 @@ body {
 }
 
 .Homepage_memberships_cards_card_img {
-  height: 320px;
+  height: 200px;
   width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.galleryPage_podcast {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e4e4e7;
+  padding: 1rem;
+  margin-bottom: 10vh;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -257,8 +245,82 @@ body {
     width: 100%;
     max-width: none;
   }
+  .Homepage_desc p {
+    max-width: 90vw;
+    margin: 0 auto;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-align: justify;
+  }
+  .Home_join_innerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50px;
+
+    height: 100%;
+    width: 90%;
+    background: center / cover no-repeat;
+  }
 
   .Home_join_innerBox {
     padding: 2rem 1rem;
+  }
+  .Homepage_memberships_button button,
+  .Home_join_innerBox button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: clamp(0.6rem, 0.8rem, 1rem);
+  }
+  .Homepage_join {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5vh;
+    text-align: justify;
+  }
+  .Home_Ourstrength {
+    padding: 0;
+  }
+  .Home_Ourstrength_heading {
+    background-color: var(--background-light);
+    padding: 2rem;
+    text-align: center;
+  }
+  .Home_Ourstrength_heading h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  .Home_Ourstrength_calendar {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 25vh;
+    width: 100%;
+  }
+  .galleryPage_podcast {
+    width: 100%;
+    padding: 4rem 2rem;
+    background-color: #e4e4e7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10vh;
+  }
+  .HomePage_banner {
+    min-height: 40vh;
+    width: 100%;
+    background: center/cover no-repeat;
+    position: relative;
   }
 }

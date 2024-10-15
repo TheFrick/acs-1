@@ -66,13 +66,13 @@ const Gallery = () => {
                     <div className="galleryPage_gallery_nav">
 
                         {pageData?.gallery?.filter(card => card.cardVisibility !== false).map((item, index) => (
-                            <h3
+                            <p
                                 key={index}
                                 onClick={() => setSelectedTab(item.galleryHeading)}
                                 className={selectedTab === item.galleryHeading ? 'active' : ''}
                             >
                                 {item.galleryHeading}
-                            </h3>
+                            </p>
                         ))}
                     </div>
                     <Suspense fallback={<h1>Loading...</h1>}>

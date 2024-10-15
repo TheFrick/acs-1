@@ -31,7 +31,7 @@ body {
 }
 
 .aboutPage_banner {
-  min-height: 80vh;
+  min-height: 50vh;
   width: 100%;
   background: url("../assets/about/banner.png") center/cover no-repeat;
   position: relative;
@@ -50,8 +50,6 @@ body {
 
 .aboutPage_banner_heading h1 {
   color: var(--white);
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(2rem, 3rem, 4rem);
   position: absolute;
   z-index: 1;
 }
@@ -85,14 +83,10 @@ body {
 }
 
 .aboutPage_story_content_heading {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1.5rem, 2vw, 3rem);
   color: var(--primary-color);
 }
 
 .aboutPage_story_content_text {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1rem, 1.2vw, 1.8rem);
   text-align: justify;
   width: 90%;
 }
@@ -124,14 +118,10 @@ body {
 }
 
 .aboutPage_box_image h2 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1rem, 1.5rem, 2rem);
   color: #2a328f;
 }
 
 .aboutPage_box_image h3 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(0.5rem, 1rem, 1.5rem);
   color: #2a328f;
 }
 
@@ -149,15 +139,11 @@ body {
 }
 
 .aboutPage_box_content_heading {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1rem, 1.2rem, 1.7rem);
   color: var(--primary-color);
   text-align: justify;
 }
 
 .aboutPage_box_content_text {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(0.5rem, 1rem, 1.5rem);
   color: var(--primary-color);
   text-align: justify;
 }
@@ -184,14 +170,10 @@ body {
 }
 
 .aboutPage_Mission_content_text h2 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1.5rem, 2rem, 2.5rem);
   color: var(--primary-color);
 }
 
 .aboutPage_Mission_content_text p {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1rem, 1.5vw, 2rem);
   color: var(--primary-color);
 }
 
@@ -204,7 +186,7 @@ body {
 }
 
 .aboutPage_Mission_image img {
-  width: 90%;
+  width: 80%;
   height: auto;
 }
 
@@ -237,18 +219,17 @@ body {
 }
 
 .aboutPage_asquash_content_text h2 {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(1.5rem, 2rem, 2.5rem);
   color: var(--primary-color);
 }
 
 .aboutPage_asquash_content_text p {
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(0.5rem, 1rem, 1.5rem);
   text-align: justify;
 }
 
 @media screen and (max-width: 768px) {
+  .aboutPage_banner {
+    height: 40vh;
+  }
   .aboutPage_story,
   .aboutPage_box,
   .aboutPage_Mission {
@@ -289,13 +270,8 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-
   .aboutPage_banner_heading h1,
   .aboutPage_story_content_heading {
-    font-size: clamp(1.5rem, 2vw, 2.5rem);
   }
 
   .aboutPage_box_image img {
@@ -308,6 +284,5 @@ body {
 
   .aboutPage_story_content_text,
   .aboutPage_asquash_content_text p {
-    font-size: clamp(1rem, 1.2rem, 1.4rem);
   }
 }

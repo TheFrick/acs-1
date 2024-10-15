@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import '../css/Contact.css'
 import house from '../assets/Contact/House.png'
 import call from '../assets/Contact/call.png'
-import mail from '../assets/Contact/Mail.png'
+import mails from '../assets/Contact/Mail.png'
 import user from '../assets/Contact/Vector.png'
 import inputMail from '../assets/Contact/Vector2.png'
 import inputPhone from '../assets/Contact/Vector3.png'
@@ -102,7 +102,7 @@ const Contact = () => {
                         </div>
                         <div className="contactPage_box_details_list_item">
                             <div className="contactPage_box_details_list_item_icon">
-                                <img src={mail} alt="" />
+                                <img src={mails} alt="" />
                             </div>
                             <div className="contactPage_box_details_list_item_content">
                                 <h3>Email us</h3>

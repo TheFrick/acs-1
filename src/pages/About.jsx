@@ -87,7 +87,7 @@ const About = () => {
                             <img src={urlFor(pageData.storySection.image)?.url()} alt="Our Story" />
                         </div>
                         <div className="aboutPage_story_content">
-                            <h2 className="aboutPage_story_content_heading">{pageData.storySection.heading}</h2>
+                            <h1 className="aboutPage_story_content_heading mb-2">{pageData.storySection.heading}</h1>
                             <p className="aboutPage_story_content_text">{pageData.storySection.text}</p>
                         </div>
                     </section>
@@ -114,7 +114,7 @@ const About = () => {
                     <section className="aboutPage_Mission">
                         <div className="aboutPage_Mission_content">
                             <div className="aboutPage_Mission_content_text">
-                                <h2>{pageData.missionSection.heading}</h2>
+                                <h1 className='mb-2'>{pageData.missionSection.heading}</h1>
                                 <p>{pageData.missionSection.text}</p>
                             </div>
                         </div>
@@ -127,7 +127,7 @@ const About = () => {
                 {pageData?.reviewSectionVisibility && (
                     <div className="galleryPage_review">
                         <div className="galleryPage_review_heading">
-                            <h2>Reviews From Our Members</h2>
+                            <h1>Reviews From Our Members</h1>
                         </div>
                         <div className="galleryPage_review_container">
                             <div className="galleryPage_review_reviews" ref={reviewsRef}>
@@ -167,7 +167,7 @@ const About = () => {
                         </div>
                         <div className="aboutPage_asquash_content">
                             <div className="aboutPage_asquash_content_text">
-                                <h2>{pageData.aSquashSection.heading}</h2>
+                                <h1>{pageData.aSquashSection.heading}</h1>
                                 <p>{pageData.aSquashSection.text}</p>
                             </div>
                         </div>

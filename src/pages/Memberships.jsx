@@ -74,12 +74,9 @@ const Memberships = () => {
                                             </div> : null
 
                                         }
-
-
-
                                     </div>
                                     <div className="membershipPage_box1_card_content_heading">
-                                        <h1>{plan.title}</h1>
+                                        <h3>{plan.title}</h3>
                                         <Link to={plan.link}><img src={icon} alt="" /></Link>
 
                                     </div>
@@ -107,12 +104,12 @@ const Memberships = () => {
                                 </div>
                                 {coach.caption && (
                                     <div className="membershipPage_wps_cards_card_caption">
-                                        {coach.caption}
+                                        <p>{coach.caption}</p>
                                     </div>
                                 )}
                                 {coach.name && (
                                     <div className="membershipPage_wps_cards_card_name">
-                                        {coach.name}
+                                        <h3>{coach.name}</h3>
                                     </div>
                                 )}
                                 <div className="membershipPage_wps_cards_card_price">
@@ -134,7 +131,7 @@ const Memberships = () => {
                                 </div>
                                 <div className="membershipPage_wps_cards_card_button">
                                     <Link to={coach.link}>
-                                        <h1>View Coach</h1>
+                                        <p>View Coach</p>
                                         <img src={icon} alt="" />
                                     </Link>
                                 </div>
@@ -160,7 +157,7 @@ const Memberships = () => {
                                     <img src={urlFor(program.image).url()} alt={program.title} />
                                 </div>
                                 <div className="membershipPage_ap_cards_title">
-                                    <h1>{program.title}</h1>
+                                    <h3>{program.title}</h3>
                                 </div>
                                 {
                                     program.price && <div className="membershipPage_ap_cards_prices">
@@ -194,14 +191,14 @@ const Memberships = () => {
                                     <img src={urlFor(program.image).url()} alt={program.title} />
                                 </div>
                                 <div className="membershipPage_jp_cards_title">
-                                    <h1>{program.title}</h1>
+                                    <h3>{program.title}</h3>
                                 </div>
                                 <div className="membershipPage_jp_cards_list">
                                     <li>{program.description}</li>
                                 </div>
                                 <div className="membershipPage_jp_cards_button">
                                     <Link to={program.link}>
-                                        <h3>{program.buttonText}</h3>
+                                        <p>{program.buttonText}</p>
                                         <img src={icon} alt="" />
                                     </Link>
 
@@ -228,7 +225,7 @@ const Memberships = () => {
                                     <p>{feature.description}</p>
                                 </div>
                             ))}
-                            <h1>{pageData.summerCamp.SubHeading}</h1>
+                            <h2>{pageData.summerCamp.SubHeading}</h2>
 
                             <Link to={pageData.summerCamp.registerButtonLink}><button>{pageData.summerCamp.registerButtonText}</button></Link>
                         </div>
@@ -255,13 +252,13 @@ const Memberships = () => {
                         <div className="membershipPage_event_banner_internalBox_box2">
                             <div className="membershipPage_event_banner_internalBox_box2_box1">
                                 <div className="membershipPage_event_banner_internalBox_box2_box1_card">
-                                    {pageData.eventBanner.eventBannerCard1}
+                                    <p>{pageData.eventBanner.eventBannerCard1}</p>
                                 </div>
                                 <div className="membershipPage_event_banner_internalBox_box2_box1_card">
-                                    {pageData.eventBanner.eventBannerCard2}
+                                    <p>{pageData.eventBanner.eventBannerCard2}</p>
                                 </div>
                                 <div className="membershipPage_event_banner_internalBox_box2_box1_card">
-                                    {pageData.eventBanner.eventBannerCard3}
+                                    <p>{pageData.eventBanner.eventBannerCard3}</p>
                                 </div>
                             </div>
                             <div className="membershipPage_event_banner_internalBox_box2_box2">
