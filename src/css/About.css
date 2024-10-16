@@ -228,7 +228,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .aboutPage_banner {
-    height: 40vh;
+    min-height: 40vh;
   }
   .aboutPage_story,
   .aboutPage_box,
