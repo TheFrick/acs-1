@@ -28,7 +28,8 @@ h4 {
 }
 
 p,
-.galleryPage_podcast_suggestion_item_content h4 {
+.galleryPage_podcast_suggestion_item_content h4,
+.Footer_subscribe_banner_nav_navigation a {
   font-family: "Gotham Book";
   font-size: clamp(0.8rem, 1rem, 1.3rem);
 }
@@ -208,9 +209,14 @@ h3 {
     font-size: clamp(0.7rem, 0.8rem, 1rem);
     font-weight: 600;
   }
+
+  .Footer_subscribe_banner_nav_navigation a {
+    font-family: var(--sub-heading);
+    font-size: clamp(0.7rem, 0.8rem, 1rem);
+  }
   .navbar__link,
   p,
-  .galleryPage_podcast_suggestion_item_content h4 {
+  .galleryPage_podcast_suggestion_item_content {
     font-family: "Gotham Book";
     font-size: clamp(0.5rem, 0.6rem, 0.7rem);
   }
@@ -255,7 +261,7 @@ h3 {
   li,
   .membershipPage_wps_cards_card_caption p {
     font-family: "Gotham Book";
-    font-size: clamp(0.6rem, 0.8rem, 1rem);
+    font-size: clamp(0.5rem, 0.6rem, 0.7rem);
     font-weight: 500;
   }
 

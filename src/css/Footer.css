@@ -105,8 +105,6 @@
 .Footer_subscribe_banner_nav_navigation a {
   text-decoration: none;
   color: black;
-  font-family: "Caecilia LT Pro", sans-serif;
-  font-size: clamp(0.5rem, 1rem, 1.5rem);
   cursor: pointer;
   margin: 0.25em 0;
 }

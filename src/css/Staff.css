@@ -245,7 +245,8 @@ body {
   .staffPage_box_right_list_listItem,
   .staffPage_box_content_list_listItem {
     width: 100%;
-    justify-content: left;
+    justify-content: flex-start;
+    text-align: left;
   }
 
   .staffPage_box_content_headers h3,
