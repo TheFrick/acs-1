@@ -55,7 +55,8 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${scrollDirection === 'down' ? 'navbar--hidden' : ''}`}>
             <div className="navbar__logo">
-                <img src={Logo} alt="Logo" />
+                <Link to="/"><img src={Logo} alt="Logo" /></Link>
+
             </div>
             <button className="navbar__hamburger" onClick={toggleMenu}>
                 <Menu />
