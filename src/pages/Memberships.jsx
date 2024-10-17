@@ -72,7 +72,9 @@ const Memberships = () => {
                                             }
                                             {
                                                 plan.initiationFee ? <div className="membershipPage_box1_card_content_price_price3">
-                                                    Fee - ${plan.initiationFee}
+
+                                                    {plan.title == "Summer Student Membership" ? `Fee - ${plan.initiationFee}` : `Initiation Fee = ${plan.initiationFee}`}
+
                                                 </div> : null
 
                                             }
