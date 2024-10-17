@@ -14,6 +14,10 @@
   --sub-heading-size: clamp(1rem, 1.1rem, 1.5rem);
 }
 
+a {
+  color: #2a328f;
+}
+
 h1 {
   font-family: var(--heading);
   font-size: var(--heading-size);
@@ -21,7 +25,8 @@ h1 {
 
 h2,
 h3,
-h4 {
+h4,
+.Home_join_innerBox h1 {
   font-family: var(--sub-heading);
   font-size: var(--sub-heading-size);
   font-weight: 600;
@@ -66,7 +71,9 @@ li,
 .staffPage_box_right_content_button a button,
 .staffPage_box_content_button a button,
 .membershipPage_wps_cards_card_caption,
-.membershipPage_wps_cards_card_caption p {
+.membershipPage_wps_cards_card_caption p,
+.Footer_box2_box1,
+.Footer_box2_box3 {
   font-family: "Gotham Book";
   font-size: clamp(0.5rem, 0.8rem, 1rem);
   font-weight: 500;

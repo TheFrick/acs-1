@@ -8,7 +8,7 @@ import Loading from '../components/Loading';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import ReactAudioPlayer from 'react-audio-player';
-import logo from '../assets/Navbar/Logo.png'
+import logo from '../assets/Home/acsLogo.png'
 
 const HomePage = () => {
     const [data, setData] = useState(null);
@@ -114,7 +114,7 @@ const HomePage = () => {
 
             <div className="Homepage_desc">
                 <img src={logo}></img>
-                {showDescText && <h3>{homepageDescText}</h3>}
+                {showDescText && <p>{homepageDescText}</p>}
             </div>
 
             {
@@ -143,25 +143,27 @@ const HomePage = () => {
                 {showMembershipCards && (
                     <div className="Homepage_memberships_cards">
                         {membershipCards?.map((card, index) => (
-                            <div key={index} className="Homepage_memberships_cards_card">
-                                <img src={urlFor(card.image)} alt={card.title} className='Homepage_memberships_cards_card_img' />
-                                <div className="Homepage_card_box1">
-                                    <div className="Homepage_card_box1_price1">${card.price.monthly}/Monthly</div>
-                                    <div className="Homepage_card_box1_price2">${card.price.annually}/Annually</div>
-                                </div>
-                                <div className="Homepage_card_box2">
-                                    <h3>{card.title}</h3>
-                                    <Link to={card.link}> <img src={icon} alt="icon" /></Link>
+                            <a href={card.link} target='_blank'>
+                                <div key={index} className="Homepage_memberships_cards_card">
+                                    <img src={urlFor(card.image)} alt={card.title} className='Homepage_memberships_cards_card_img' />
+                                    <div className="Homepage_card_box1">
+                                        <div className="Homepage_card_box1_price1">${card.price.monthly}/Monthly</div>
+                                        <div className="Homepage_card_box1_price2">${card.price.annually}/Annually</div>
+                                    </div>
+                                    <div className="Homepage_card_box2">
+                                        <h3>{card.title}</h3>
+                                        <Link to={card.link}> <img src={icon} alt="icon" /></Link>
 
+                                    </div>
+                                    <div className="Homepage_card_box3">
+                                        <ul>
+                                            {card.features?.map((feature, i) => (
+                                                <li key={i}>{feature}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div className="Homepage_card_box3">
-                                    <ul>
-                                        {card.features?.map((feature, i) => (
-                                            <li key={i}>{feature}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 )}

@@ -88,6 +88,7 @@ body {
   box-shadow: var(--shadow);
   border-radius: 20px;
   padding: 1rem;
+  min-height: 450px;
 }
 
 .membershipPage_box1_card_img {
@@ -154,9 +155,13 @@ body {
 }
 
 .membershipPage_wps,
-.membershipPage_ap,
-.membershipPage_jp {
+.membershipPage_ap {
   margin-bottom: 5rem;
+  padding: 2rem;
+}
+
+.membershipPage_jp {
+  margin-bottom: 0;
   padding: 2rem;
 }
 
@@ -182,17 +187,43 @@ body {
   gap: 2rem;
 }
 
-.membershipPage_wps_cards_card,
-.membershipPage_ap_cards_card,
-.membershipPage_jp_cards_card {
+.membershipPage_wps_cards_card {
   flex: 1 1 300px;
-  max-width: 350px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   box-shadow: var(--shadow);
   border-radius: 30px;
   padding: 1.5rem;
+  min-height: 400px;
+}
+
+.membershipPage_ap_cards_card,
+.membershipPage_jp_cards_card {
+  flex: 1 1 300px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+  border-radius: 30px;
+  padding: 1.5rem;
+  min-height: 500px;
+}
+
+.membershipPage_jp_cards_card {
+  min-height: 600px;
+}
+
+.membershipPage_jp_cards_card {
+  position: relative; /* Make the card container relative */
+}
+
+.membershipPage_jp_cards_button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
 .membershipPage_wps_cards_card_img,
@@ -331,7 +362,8 @@ body {
 }
 
 .membershipPage_Sc {
-  margin-bottom: 10vh;
+  margin-bottom: 0;
+  padding: 6rem;
 }
 
 .membershipPage_Sc_content {
@@ -446,7 +478,7 @@ body {
 
 .membershipPage_event_banner_internalBox {
   height: 60vh;
-  width: 85vw;
+  width: 82vw;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -734,5 +766,22 @@ body {
 
     cursor: pointer;
     transition: background-color 0.3s ease;
+  }
+  .membershipPage_ap_cards_card {
+    flex: 1 1 300px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+    border-radius: 30px;
+    padding: 1.5rem;
+    min-height: 400px;
+  }
+  .membershipPage_jp_cards_card {
+    min-height: 450px;
+  }
+  .membershipPage_Sc {
+    padding: 0;
   }
 }

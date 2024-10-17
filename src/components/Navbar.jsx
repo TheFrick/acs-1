@@ -34,7 +34,6 @@ const Navbar = () => {
         prevScroll.current = currentScroll;
     };
 
-
     const prevScroll = React.useRef(window.pageYOffset);
 
     useEffect(() => {
@@ -48,29 +47,41 @@ const Navbar = () => {
         { to: "/staff", label: "Staff" },
         { to: "/gallery", label: "Gallery" },
         { to: "/about", label: "About Us" },
+        { to: "https://www.aplussquash.org/", label: "A+ Squash", external: true }, // Mark this item as external
         { to: "/contact", label: "Contact Us" },
-        { to: "/about#APlusSquash", label: "A+ Squash" }
     ];
 
     return (
         <nav className={`navbar ${scrollDirection === 'down' ? 'navbar--hidden' : ''}`}>
             <div className="navbar__logo">
                 <Link to="/"><img src={Logo} alt="Logo" /></Link>
-
             </div>
             <button className="navbar__hamburger" onClick={toggleMenu}>
                 <Menu />
             </button>
             <div className={`navbar__navigation ${isMenuOpen ? 'navbar__navigation--open' : ''}`}>
-                {navItems.map(({ to, label }) => (
-                    <Link
-                        key={to}
-                        to={to}
-                        className={`navbar__link ${snap.currentPage === to ? "navbar__link--active" : ""}`}
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        {label}
-                    </Link>
+                {navItems.map(({ to, label, external }) => (
+                    external ? (
+                        <a
+                            key={to}
+                            href={to}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="navbar__link"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {label}
+                        </a>
+                    ) : (
+                        <Link
+                            key={to}
+                            to={to}
+                            className={`navbar__link ${snap.currentPage === to ? "navbar__link--active" : ""}`}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {label}
+                        </Link>
+                    )
                 ))}
             </div>
             <div className="navbar__right-menu">

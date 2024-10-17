@@ -57,9 +57,10 @@ body {
 .aboutPage_story {
   height: auto;
   width: 100%;
-  margin-bottom: 10vh;
+  margin-bottom: 4vh;
   display: flex;
   flex-wrap: wrap;
+  padding: 4rem;
 }
 
 .aboutPage_story_img {
@@ -98,11 +99,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   background-color: #f1f5f9;
-  padding: 2rem;
+  padding: 2rem 8rem;
 }
 
 .aboutPage_box_image {
-  flex: 1 1 30%;
+  flex: 1 1 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,6 +154,7 @@ body {
   flex-wrap: wrap;
   height: auto;
   margin-bottom: 10vh;
+  padding: 2rem 7rem;
 }
 
 .aboutPage_Mission_content {
@@ -214,7 +216,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 2rem;
+  padding: 3rem 14rem;
   gap: 1rem;
 }
 
@@ -282,7 +284,14 @@ body {
     width: 90%;
   }
 
-  .aboutPage_story_content_text,
-  .aboutPage_asquash_content_text p {
+  .aboutPage_story,
+  .aboutPage_box,
+  .aboutPage_Mission {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .aboutPage_Mission_content {
+    width: 100%;
+    text-align: center;
   }
 }

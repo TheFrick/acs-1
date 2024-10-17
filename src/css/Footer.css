@@ -139,7 +139,7 @@
 .Footer_box2_box3 {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .Footer_box2_innerBox {

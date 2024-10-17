@@ -65,8 +65,9 @@ const Staff = () => {
                                 <div className="staffPage_box_content_list">
                                     {member.features?.map((feature, featureIndex) => (
                                         <div className="staffPage_box_content_list_listItem" key={featureIndex}>
-                                            <img src={ellipse} alt="bullet point" />
-                                            <p>{feature}</p>
+                                            <li>
+                                                {feature}
+                                            </li>
                                         </div>
                                     ))}
                                 </div>
@@ -87,8 +88,9 @@ const Staff = () => {
                                     <div className="staffPage_box_right_list">
                                         {member.features?.map((feature, featureIndex) => (
                                             <div className="staffPage_box_right_list_listItem" key={featureIndex}>
-                                                <img src={ellipse} alt="bullet point" />
-                                                <p>{feature}</p>
+                                                <li>
+                                                    {feature}
+                                                </li>
                                             </div>
                                         ))}
                                     </div>

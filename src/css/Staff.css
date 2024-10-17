@@ -253,6 +253,28 @@ body {
   .staffPage_box_right_content_headers h3 {
     margin-bottom: 1rem;
   }
+  .staffPage_box_content_headers,
+  .staffPage_box_right_content_headers {
+    text-align: center;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+  }
+  .staffPage_box_content,
+  .staffPage_box_right_content {
+    width: 100%;
+    align-items: flex-start;
+    text-align: center;
+  }
+  .staffPage_box_content_button,
+  .staffPage_box_right_content_button {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 480px) {

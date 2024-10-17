@@ -49,93 +49,101 @@ const Memberships = () => {
                 <div className="membershipPage_box1">
                     <div className="membershipPage_box1_box1">
                         {pageData.membershipPlans.map((plan, index) => (
-                            <div key={index} className="membershipPage_box1_card">
-                                <div className="membershipPage_box1_card_img">
-                                    <img src={urlFor(plan.image).url()} alt={plan.title} />
+                            <a href={plan.link} target='/blank'>
+                                <div key={index} className="membershipPage_box1_card">
+
+                                    <div className="membershipPage_box1_card_img">
+                                        <img src={urlFor(plan.image).url()} alt={plan.title} />
+                                    </div>
+                                    <div className="membershipPage_box1_card_content">
+
+                                        <div className="membershipPage_box1_card_content_price">
+                                            {
+                                                plan.monthlyPrice ? <div className="membershipPage_box1_card_content_price1">
+
+                                                    ${plan.monthlyPrice}/Monthly
+
+                                                </div> : null
+                                            }
+                                            {
+                                                plan.annualPrice ? <div className='membershipPage_box1_card_content_price2'>
+                                                    ${plan.annualPrice}/Annually
+                                                </div> : null
+                                            }
+                                            {
+                                                plan.initiationFee ? <div className="membershipPage_box1_card_content_price_price3">
+                                                    Fee - ${plan.initiationFee}
+                                                </div> : null
+
+                                            }
+                                        </div>
+                                        <div className="membershipPage_box1_card_content_heading">
+                                            <h3>{plan.title}</h3>
+                                            <Link to={plan.link}><img src={icon} alt="" /></Link>
+
+                                        </div>
+                                        <div className="membershipPage_box1_card_content_list">
+                                            {plan?.features.map((feature, i) => (
+                                                <li key={i}>{feature}</li>
+                                            ))}
+                                        </div>
+                                    </div>
+
                                 </div>
-                                <div className="membershipPage_box1_card_content">
-
-                                    <div className="membershipPage_box1_card_content_price">
-                                        {
-                                            plan.monthlyPrice ? <div className="membershipPage_box1_card_content_price1">
-
-                                                ${plan.monthlyPrice}/Monthly
-
-                                            </div> : null
-                                        }
-                                        {
-                                            plan.annualPrice ? <div className='membershipPage_box1_card_content_price2'>
-                                                ${plan.annualPrice}/Annually
-                                            </div> : null
-                                        }
-                                        {
-                                            plan.initiationFee ? <div className="membershipPage_box1_card_content_price_price3">
-                                                Initiation Fee - ${plan.initiationFee}
-                                            </div> : null
-
-                                        }
-                                    </div>
-                                    <div className="membershipPage_box1_card_content_heading">
-                                        <h3>{plan.title}</h3>
-                                        <Link to={plan.link}><img src={icon} alt="" /></Link>
-
-                                    </div>
-                                    <div className="membershipPage_box1_card_content_list">
-                                        {plan?.features.map((feature, i) => (
-                                            <li key={i}>{feature}</li>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+                            </a>
                         ))}
+
                     </div>
                 </div>
             }
             {pageData.showWeeklyPrivateSessions && (
+
                 <div className="membershipPage_wps">
                     <div className="membershipPage_wps_heading">
                         <h1>{pageData.weeklyPrivateSessions.heading}</h1>
                     </div>
                     <div className="membershipPage_wps_cards">
                         {pageData?.weeklyPrivateSessions.coaches.map((coach, index) => (
-                            <div key={index} className="membershipPage_wps_cards_card">
-                                <div className="membershipPage_wps_cards_card_img">
-                                    <img src={urlFor(coach.image).url()} alt={coach.name} />
-                                </div>
-                                {coach.caption && (
-                                    <div className="membershipPage_wps_cards_card_caption">
-                                        <p>{coach.caption}</p>
+                            <a href={coach.link} target='/blank'>
+                                <div key={index} className="membershipPage_wps_cards_card">
+                                    <div className="membershipPage_wps_cards_card_img">
+                                        <img src={urlFor(coach.image).url()} alt={coach.name} />
                                     </div>
-                                )}
-                                {coach.name && (
-                                    <div className="membershipPage_wps_cards_card_name">
-                                        <h3>{coach.name}</h3>
+                                    {coach.caption && (
+                                        <div className="membershipPage_wps_cards_card_caption">
+                                            <p>{coach.caption}</p>
+                                        </div>
+                                    )}
+                                    {coach.name && (
+                                        <div className="membershipPage_wps_cards_card_name">
+                                            <h3>{coach.name}</h3>
+                                        </div>
+                                    )}
+                                    <div className="membershipPage_wps_cards_card_price">
+                                        {coach.prices?.hourly && (
+                                            <div className="membershipPage_wps_cards_card_price1">
+                                                ${coach.prices.hourly}/hr
+                                            </div>
+                                        )}
+                                        {coach.prices?.['forty_five_minutes'] && (
+                                            <div className="membershipPage_wps_cards_card_price2">
+                                                ${coach.prices['forty_five_minutes']}/45 min
+                                            </div>
+                                        )}
+                                        {coach.prices?.['thirty_minutes'] && (
+                                            <div className="membershipPage_wps_cards_card_price3">
+                                                ${coach.prices['thirty_minutes']}/30 min
+                                            </div>
+                                        )}
                                     </div>
-                                )}
-                                <div className="membershipPage_wps_cards_card_price">
-                                    {coach.prices?.hourly && (
-                                        <div className="membershipPage_wps_cards_card_price1">
-                                            ${coach.prices.hourly}/hr
-                                        </div>
-                                    )}
-                                    {coach.prices?.['forty_five_minutes'] && (
-                                        <div className="membershipPage_wps_cards_card_price2">
-                                            ${coach.prices['forty_five_minutes']}/45 min
-                                        </div>
-                                    )}
-                                    {coach.prices?.['thirty_minutes'] && (
-                                        <div className="membershipPage_wps_cards_card_price3">
-                                            ${coach.prices['thirty_minutes']}/30 min
-                                        </div>
-                                    )}
+                                    <div className="membershipPage_wps_cards_card_button">
+                                        <Link to={coach.link}>
+                                            <p>View Coach</p>
+                                            <img src={icon} alt="" />
+                                        </Link>
+                                    </div>
                                 </div>
-                                <div className="membershipPage_wps_cards_card_button">
-                                    <Link to={coach.link}>
-                                        <p>View Coach</p>
-                                        <img src={icon} alt="" />
-                                    </Link>
-                                </div>
-                            </div>
+                            </a>
                         ))}
                     </div>
                     <div className="membershipPage_wps_button">
@@ -144,7 +152,8 @@ const Memberships = () => {
                         </Link>
                     </div>
                 </div>
-            )}
+            )
+            }
             {
                 pageData.showAdultProgramming && <div className="membershipPage_ap">
                     <div className="membershipPage_ap_heading">
@@ -152,29 +161,31 @@ const Memberships = () => {
                     </div>
                     <div className="membershipPage_ap_cards">
                         {pageData?.adultProgramming.programs.map((program, index) => (
-                            <div key={index} className="membershipPage_ap_cards_card">
-                                <div className="membershipPage_ap_cards_img">
-                                    <img src={urlFor(program.image).url()} alt={program.title} />
-                                </div>
-                                <div className="membershipPage_ap_cards_title">
-                                    <h3>{program.title}</h3>
-                                </div>
-                                {
-                                    program.price && <div className="membershipPage_ap_cards_prices">
-                                        <div className="membershipPage_ap_cards_prices_priceBox">
-                                            {program.price}
-                                        </div>
+                            <a >
+                                <div key={index} className="membershipPage_ap_cards_card">
+                                    <div className="membershipPage_ap_cards_img">
+                                        <img src={urlFor(program.image).url()} alt={program.title} />
                                     </div>
-                                }
-
-                                <div className="membershipPage_ap_cards_list">
+                                    <div className="membershipPage_ap_cards_title">
+                                        <h3>{program.title}</h3>
+                                    </div>
                                     {
-                                        program?.details?.map((detail, index) => (
-                                            <li key={index}>{detail}</li>
-                                        ))
+                                        program.price && <div className="membershipPage_ap_cards_prices">
+                                            <div className="membershipPage_ap_cards_prices_priceBox">
+                                                {program.price}
+                                            </div>
+                                        </div>
                                     }
+
+                                    <div className="membershipPage_ap_cards_list">
+                                        {
+                                            program?.details?.map((detail, index) => (
+                                                <li key={index}>{detail}</li>
+                                            ))
+                                        }
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>
@@ -186,24 +197,26 @@ const Memberships = () => {
                     </div>
                     <div className="membershipPage_jp_cards">
                         {pageData.juniorProgramming.programs.map((program, index) => (
-                            <div key={index} className="membershipPage_jp_cards_card">
-                                <div className="membershipPage_jp_cards_img">
-                                    <img src={urlFor(program.image).url()} alt={program.title} />
-                                </div>
-                                <div className="membershipPage_jp_cards_title">
-                                    <h3>{program.title}</h3>
-                                </div>
-                                <div className="membershipPage_jp_cards_list">
-                                    <li>{program.description}</li>
-                                </div>
-                                <div className="membershipPage_jp_cards_button">
-                                    <Link to={program.link}>
-                                        <p>{program.buttonText}</p>
-                                        <img src={icon} alt="" />
-                                    </Link>
+                            <a href={program.link} target='_blank'>
+                                <div key={index} className="membershipPage_jp_cards_card">
+                                    <div className="membershipPage_jp_cards_img">
+                                        <img src={urlFor(program.image).url()} alt={program.title} />
+                                    </div>
+                                    <div className="membershipPage_jp_cards_title">
+                                        <h3>{program.title}</h3>
+                                    </div>
+                                    <div className="membershipPage_jp_cards_list">
+                                        <li>{program.description}</li>
+                                    </div>
+                                    <div className="membershipPage_jp_cards_button">
+                                        <Link to={program.link}>
+                                            <p>{program.buttonText}</p>
+                                            <img src={icon} alt="" />
+                                        </Link>
 
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>
@@ -279,7 +292,7 @@ const Memberships = () => {
                 </div>
             }
             <Footer />
-        </div>
+        </div >
     );
 };
 

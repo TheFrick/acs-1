@@ -31,12 +31,12 @@ body {
 }
 
 .Homepage_desc {
-  padding: 4rem 2rem;
+  padding: 4rem 7rem;
   text-align: center;
 }
 
 .Homepage_desc img {
-  height: 7vh;
+  height: clamp(2.5vh, 3vh, 3.5vh);
 }
 
 .Homepage_desc p {
@@ -147,12 +147,12 @@ body {
 }
 
 .Home_Ourstrength {
-  padding: 4rem 2rem;
+  padding: 4rem 0rem;
 }
 
 .Home_Ourstrength_heading {
   background-color: var(--background-light);
-  padding: 3rem 2rem;
+  padding: 3rem 5rem;
   text-align: center;
 }
 
@@ -231,7 +231,17 @@ body {
   cursor: pointer;
 }
 
+.Homepage_desc p,
+.Homepage_memberships_heading h2 {
+  font-weight: 200;
+}
+
 @media (max-width: 768px) {
+  .Homepage_desc {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
   .hamburger-menu {
     display: block;
   }
@@ -322,5 +332,13 @@ body {
     width: 100%;
     background: center/cover no-repeat;
     position: relative;
+  }
+
+  .Homepage_desc img {
+    height: clamp(1vh, 2vh, 3vh);
+  }
+  .Homepage_desc p,
+  .Homepage_memberships_heading h2 {
+    font-weight: 200;
   }
 }

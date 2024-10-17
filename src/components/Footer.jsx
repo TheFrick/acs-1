@@ -44,7 +44,7 @@ const Footer = () => {
                     </div>
                     <div className="Footer_subscribe_banner_nav">
                         <div className="Footer_subscribe_banner_nav_navigation">
-                            <Link to="/about">About us</Link><Link to="/membership">Memberships</Link><Link to="/staff">Staff</Link><Link to="/about#APlusSquash">A+ squash</Link><Link to="/contact">Contact us</Link>
+                            <Link to="/">Home</Link><Link to="/membership">Memberships</Link><Link to="/staff">Staff</Link><Link to="/gallery">Gallery</Link><Link to="/about">About us</Link><a href='https://www.aplussquash.org/' target="_blank">A+ Squash</a><Link to="/contact">Contact us</Link>
                         </div>
                         <div className="Footer_subscribe_banner_nav_socials">
                             <img src={instagram} alt="" /><img src={facebook} alt="" /><img src={youtube} alt="" />
@@ -55,14 +55,13 @@ const Footer = () => {
             <div className="Footer_box2">
                 <div className="Footer_box2_innerBox">
                     <div className="Footer_box2_box1">
-                        <p>© 2024 ACS. All rights reserved.</p>
+                        © 2024 ACS. All rights reserved.
                     </div>
                     <div className="Footer_box2_box2">
                         <img src={logo} alt="" />
                     </div>
                     <div className="Footer_box2_box3">
-                        <p>Terms of Service</p>
-                        <p>Privacy Policy</p>
+                        Terms of Service &nbsp;&nbsp;&nbsp;&nbsp; Privacy Policy
                     </div>
                 </div>
 
