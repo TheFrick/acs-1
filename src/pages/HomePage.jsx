@@ -94,6 +94,7 @@ const HomePage = () => {
                 <video
                     autoPlay
                     loop
+                    playsInline
                     muted
                     className="background-video"
                     style={{
