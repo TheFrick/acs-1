@@ -223,6 +223,7 @@ h3 {
   }
   .navbar__link,
   p,
+  li,
   .galleryPage_podcast_suggestion_item_content {
     font-family: "Gotham Book";
     font-size: clamp(0.5rem, 0.6rem, 0.7rem);
@@ -265,7 +266,6 @@ h3 {
     font-size: clamp(0.5rem, 0.65rem, 0.8rem);
   }
 
-  li,
   .membershipPage_wps_cards_card_caption p {
     font-family: "Gotham Book";
     font-size: clamp(0.5rem, 0.6rem, 0.7rem);
