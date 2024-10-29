@@ -43,7 +43,7 @@ const Staff = () => {
             >
                 <Navbar />
                 <div className="StaffPage_banner_heading">
-                    <h1>Our Staff</h1>
+                    <h1>{pageData?.banner?.heading}</h1>
                 </div>
             </div>
             <div className="staffPage_boxes">

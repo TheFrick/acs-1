@@ -195,7 +195,7 @@ const HomePage = () => {
             {
                 podcastSectionVisibility && <div className="galleryPage_podcast">
                     <div className="galleryPage_podcast_heading">
-                        <h1>Explore Our Community Through Podcasts</h1>
+                        <h1>EXPLORE OUR COMMUNITY THROUGH PODCASTS</h1>
                     </div>
                     <div className="galleryPage_podcast_main">
                         {selectedPodcast && (
