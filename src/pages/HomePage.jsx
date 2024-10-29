@@ -118,23 +118,6 @@ const HomePage = () => {
                 {showDescText && <p>{homepageDescText}</p>}
             </div>
 
-            {
-                showJoinSection &&
-                <>
-                    <div className="Homepage_join" >
-                        <div className="Home_join_innerBox" style={{
-                            backgroundImage: joinBackgroundImage ? `url(${urlFor(joinBackgroundImage)})` : 'none'
-                        }}>
-                            <h1>{joinHeading}</h1>
-                            <Link to={joinSectionLink}>
-                                <button>{joinButtonText}</button>
-                            </Link>
-
-                        </div>
-                    </div>
-                </>
-
-            }
 
             <div className="Homepage_memberships">
                 <div className="Homepage_memberships_heading">
@@ -191,6 +174,24 @@ const HomePage = () => {
                     </div>
                 </>
             )}
+
+            {
+                showJoinSection &&
+                <>
+                    <div className="Homepage_join" >
+                        <div className="Home_join_innerBox" style={{
+                            backgroundImage: joinBackgroundImage ? `url(${urlFor(joinBackgroundImage)})` : 'none'
+                        }}>
+                            <h1>{joinHeading}</h1>
+                            <Link to={joinSectionLink}>
+                                <button>{joinButtonText}</button>
+                            </Link>
+
+                        </div>
+                    </div>
+                </>
+
+            }
             {
                 podcastSectionVisibility && <div className="galleryPage_podcast">
                     <div className="galleryPage_podcast_heading">

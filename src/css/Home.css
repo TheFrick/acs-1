@@ -36,7 +36,7 @@ body {
 }
 
 .Homepage_desc img {
-  height: 4rem;
+  height: 7rem;
 }
 
 .Homepage_desc p {
@@ -167,11 +167,22 @@ body {
 }
 
 .Homepage_desc p {
-  max-width: 80vw;
+  max-width: 60vw;
   margin: 0 auto;
   font-weight: 900;
   color: var(--primary-color);
   text-align: center;
+}
+
+.Home_Ourstrength_heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home_Ourstrength_heading p {
+  max-width: 60vw;
 }
 
 .Home_Ourstrength_calendar {
@@ -189,7 +200,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
 }
 
 .Home_join_innerBox {
