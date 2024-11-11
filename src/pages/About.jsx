@@ -162,13 +162,19 @@ const About = () => {
 
                 {pageData?.aplusSquashSectionVisibility && pageData?.aSquashSection && (
                     <section className="aboutPage_asquash" id="APlusSquash">
-                        <div className="aboutPage_asquash_image">
-                            <img src={urlFor(pageData.aSquashSection.image)?.url()} alt="A+ Squash" />
-                        </div>
+                        {
+                            pageData.aSquashSection.image ? <div className="aboutPage_asquash_image">
+                                <img src={urlFor(pageData.aSquashSection.image)?.url()} alt="A+ Squash" />
+                            </div> : null
+                        }
+
                         <div className="aboutPage_asquash_content">
                             <div className="aboutPage_asquash_content_text">
                                 <h1>{pageData.aSquashSection.heading}</h1>
-                                <p>{pageData.aSquashSection.text}</p>
+                                <div className="aboutPage_asquash_content_text_list">
+                                    <p>{pageData.aSquashSection.text}</p>
+                                </div>
+
                             </div>
                         </div>
                     </section>

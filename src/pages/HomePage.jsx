@@ -118,6 +118,20 @@ const HomePage = () => {
                 {showDescText && <p>{homepageDescText}</p>}
             </div>
 
+            {showOurStrengthSection && (
+                <>
+                    <div className="Home_Ourstrength">
+                        <div className="Home_Ourstrength_heading">
+                            <h1>{ourStrengthHeading}</h1>
+                            <h2>{ourStrengthSubheading}</h2>
+                            <p>{ourStrengthDescription}</p>
+                        </div>
+                        <div className="Home_Ourstrength_calendar" style={{
+                            backgroundImage: ourStrengthImage ? `url(${urlFor(ourStrengthImage)})` : 'none'
+                        }}></div>
+                    </div>
+                </>
+            )}
 
             <div className="Homepage_memberships">
                 <div className="Homepage_memberships_heading">
@@ -160,20 +174,6 @@ const HomePage = () => {
 
                 </div>
             </div>
-            {showOurStrengthSection && (
-                <>
-                    <div className="Home_Ourstrength">
-                        <div className="Home_Ourstrength_heading">
-                            <h1>{ourStrengthHeading}</h1>
-                            <h2>{ourStrengthSubheading}</h2>
-                            <p>{ourStrengthDescription}</p>
-                        </div>
-                        <div className="Home_Ourstrength_calendar" style={{
-                            backgroundImage: ourStrengthImage ? `url(${urlFor(ourStrengthImage)})` : 'none'
-                        }}></div>
-                    </div>
-                </>
-            )}
 
             {
                 showJoinSection &&
