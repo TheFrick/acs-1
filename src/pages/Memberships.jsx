@@ -41,7 +41,7 @@ const Memberships = () => {
             <div className="membershipPage_banner" style={{ backgroundImage: `url(${urlFor(pageData.banner.backgroundImage).url()})` }}>
                 <Navbar />
                 <div className="membershipPage_banner_heading">
-                    <h1>{pageData.banner.heading}</h1>
+                    <h1>{pageData.banner.heading.toUpperCase()}</h1>
                 </div>
             </div>
             {

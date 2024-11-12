@@ -76,7 +76,7 @@ const Contact = () => {
             <div className="contactPage_banner" style={{ backgroundImage: `url(${urlFor(pageData.bannerImage).url()})` }}>
                 <Navbar />
                 <div className="contactPage_banner_heading">
-                    <h1>{pageData.bannerHeading}</h1>
+                    <h1>{pageData.bannerHeading.toUpperCase()}</h1>
                 </div>
             </div>
             <div className="contactPage_box">

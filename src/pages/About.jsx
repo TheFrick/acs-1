@@ -76,7 +76,7 @@ const About = () => {
             >
                 <Navbar />
                 <div className="aboutPage_banner_heading">
-                    <h1>{pageData?.bannerHeading || 'About Us'}</h1>
+                    <h1>{pageData?.bannerHeading.toUpperCase() || 'ABOUT US'}</h1>
                 </div>
             </div>
 
@@ -160,21 +160,45 @@ const About = () => {
                     </div>
                 )}
 
-                {pageData?.aplusSquashSectionVisibility && pageData?.aSquashSection && (
+                {pageData?.boardofDirectorsSectionVisibility && pageData?.BoardOfDirectors && (
                     <section className="aboutPage_asquash" id="APlusSquash">
                         {
-                            pageData.aSquashSection.image ? <div className="aboutPage_asquash_image">
-                                <img src={urlFor(pageData.aSquashSection.image)?.url()} alt="A+ Squash" />
+                            pageData.BoardOfDirectors.image ? <div className="aboutPage_asquash_image">
+                                <img src={urlFor(pageData.BoardOfDirectors.image)?.url()} alt="A+ Squash" />
                             </div> : null
                         }
 
                         <div className="aboutPage_asquash_content">
-                            <div className="aboutPage_asquash_content_text">
-                                <h1>{pageData.aSquashSection.heading}</h1>
-                                <div className="aboutPage_asquash_content_text_list">
-                                    <p>{pageData.aSquashSection.text}</p>
-                                </div>
+                            <div className="aboutPage_asquash_content_heading">
+                                <h1>BOARD OF DIRECTORS</h1>
+                            </div>
+                            <div className="aboutPage_asquash_content_list">
 
+                                <div className="aboutPage_asquash_content_list_container_left">
+                                    {
+                                        pageData.BoardOfDirectors.Members.map((item, index) => (
+                                            <ul key={index}>
+                                                {
+                                                    index % 2 == 0 && <li>{item}</li>
+                                                }
+
+                                            </ul>
+                                        ))
+                                    }
+                                </div>
+                                <div className="aboutPage_asquash_content_list_container_right">
+                                    {
+                                        pageData.BoardOfDirectors.Members.map((item, index) => (
+                                            <ul key={index}>
+                                                {
+                                                    index % 2 !== 0 && <li>{item}</li>
+                                                }
+
+                                            </ul>
+                                        ))
+                                    }
+                                </div>
+                                {/*  */}
                             </div>
                         </div>
                     </section>

@@ -43,7 +43,7 @@ const Staff = () => {
             >
                 <Navbar />
                 <div className="StaffPage_banner_heading">
-                    <h1>{pageData?.banner?.heading}</h1>
+                    <h1>{pageData?.banner?.heading.toUpperCase()}</h1>
                 </div>
             </div>
             <div className="staffPage_boxes">
@@ -73,7 +73,9 @@ const Staff = () => {
                                 </div>
                                 <div className="staffPage_box_content_button">
 
-                                    <Link to={member.link}><button>Sign up Now</button></Link>
+                                    {
+                                        member.name === "KIRAN THAKKAR" ? null : <Link to={member.link}><button>Sign up Now</button></Link>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -95,7 +97,10 @@ const Staff = () => {
                                         ))}
                                     </div>
                                     <div className="staffPage_box_right_content_button">
-                                        <Link to={member.link}><button>Sign up Now</button></Link>
+                                        {
+                                            member.name === "KIRAN THAKKAR" ? null : <Link to={member.link}><button>Sign up Now</button></Link>
+                                        }
+
                                     </div>
                                 </div>
                             </div>
