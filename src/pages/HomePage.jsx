@@ -15,15 +15,30 @@ const HomePage = () => {
     const [podcastData, setPodcastData] = useState(null);
     const [selectedPodcast, setSelectedPodcast] = useState(null);
     const [podcastSectionVisibility, setPodcastSectionVisibility] = useState(true);
+    const [posts, setPosts] = useState([]);
     const Navigate = useNavigate();
+
+    const config = {
+        connectedAccountId: "6578f29f9370eb5a05f52456",
+        collectionId: "6578f29f9370eb5a05f52456",
+        pageSize: 20,
+        thumbnailsPerRow: 4,
+        padding: 20,
+        aspectRatio: 'four-three',
+        showMeta: true,
+        metaPosition: 'bottom'
+    };
 
     useEffect(() => {
         const fetchData = async () => {
+
             const homepageData = await client.fetch(`*[_type == "homepage"][0]`);
             setPodcastData(homepageData.podcast);
             setSelectedPodcast(homepageData.podcast[0]);
             setPodcastSectionVisibility(homepageData.podcastSectionVisibility);
             setData(homepageData);
+
+            console.log(homepageData)
         };
 
         fetchData();
@@ -34,8 +49,15 @@ const HomePage = () => {
                 setSelectedPodcast(homepageData.podcast[0]);
                 setPodcastSectionVisibility(homepageData.podcastSectionVisibility);
                 setData(update.result);
+
             }
-        });
+        }
+
+
+
+        );
+
+
 
         return () => subscription.unsubscribe();
     }, []);
@@ -56,6 +78,7 @@ const HomePage = () => {
         showMembershipsDescription,
         membershipsDescription,
         showMembershipCards,
+        ourStrengthGallery,
         membershipCards,
         showOurStrengthSection,
         ourStrengthHeading,
@@ -108,7 +131,7 @@ const HomePage = () => {
                     }}
                 >
                     <source src={makeUrl(homepageBanner.asset._ref)} type="video/mp4" />
-                    Your browser does not support the video tag.
+                    Your browser does not support this video.
                 </video>
                 <Navbar />
             </div>
@@ -116,6 +139,7 @@ const HomePage = () => {
             <div className="Homepage_desc">
                 <img src={logo}></img>
                 {showDescText && <p>{homepageDescText}</p>}
+
             </div>
 
             {showOurStrengthSection && (
@@ -126,9 +150,18 @@ const HomePage = () => {
                             <h2>{ourStrengthSubheading}</h2>
                             <p>{ourStrengthDescription}</p>
                         </div>
-                        <div className="Home_Ourstrength_calendar" style={{
-                            backgroundImage: ourStrengthImage ? `url(${urlFor(ourStrengthImage)})` : 'none'
-                        }}></div>
+                        <div className="Home_Ourstrength_gallery">
+                            {
+                                ourStrengthGallery?.map((item, index) => (
+                                    <div key={index}>
+                                        <Link to={item.url} target="_blank">
+                                            <img src={urlFor(item.image)} />
+                                        </Link>
+                                    </div>
+                                ))
+                            }
+                        </div>
+
                     </div>
                 </>
             )}

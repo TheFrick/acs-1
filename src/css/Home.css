@@ -148,10 +148,10 @@ body {
 
 .Home_Ourstrength {
   padding: 1rem 0rem;
+  background-color: var(--background-light);
 }
 
 .Home_Ourstrength_heading {
-  background-color: var(--background-light);
   padding: 3rem 5rem;
   text-align: center;
 }
@@ -245,6 +245,29 @@ body {
 .Homepage_desc p,
 .Homepage_memberships_heading h2 {
   font-weight: 200;
+}
+.Home_Ourstrength_gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+  height: max-content;
+}
+
+.Home_Ourstrength_gallery div {
+  display: contents;
+}
+
+.Home_Ourstrength_gallery img {
+  width: 95%;
+  height: 95%;
+
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -351,5 +374,12 @@ body {
 
   .Homepage_desc img {
     height: 3rem;
+  }
+  .Home_Ourstrength_gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem;
   }
 }
