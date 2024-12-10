@@ -73,10 +73,10 @@
   position: absolute;
   top: 0.25em;
   right: 0.25em;
-  width: 60vw;
+  width: 40%;
   height: calc(100% - 0.5em);
   border: none;
-  border-radius: 30px;
+  border-radius: 100vw;
   background-color: #2a328f;
   color: #fff;
   font-weight: 300;
@@ -185,7 +185,7 @@
     width: 40%;
     height: calc(100% - 0.5em);
     border: none;
-    width: 60vw;
+    border-radius: 60vw;
     background-color: #2a328f;
     color: #fff;
     font-weight: 300;
