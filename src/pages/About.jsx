@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../css/About.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -9,6 +9,7 @@ import icon from '../assets/about/icon.png';
 
 const About = () => {
     const [pageData, setPageData] = useState(null);
+    const [pageDataStaff, setPageDataStaff] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const reviewsRef = useRef(null);
@@ -35,6 +36,25 @@ const About = () => {
             }
         });
 
+        return () => subscription.unsubscribe();
+    }, []);
+
+      useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const result = await client.fetch('*[_type == "staffPage"][0]');
+                setPageDataStaff(result);
+            } catch (error) {
+                console.error('Error fetching data from Sanity:', error);
+            }
+        };
+
+        fetchData();
+        const subscription = client.listen(`*[_type == "staffPage"][0]`).subscribe((update) => {
+            if (update.result) {
+                setPageDataStaff(update.result);
+            }
+        });
         return () => subscription.unsubscribe();
     }, []);
 
@@ -67,6 +87,7 @@ const About = () => {
             });
         }
     };
+    const visibleMembers = pageDataStaff?.members?.filter(member => member.isVisible !== false);
 
     return (
         <div className="aboutPage">
@@ -92,7 +113,79 @@ const About = () => {
                         </div>
                     </section>
                 )}
+               
+                        <div className="staffPage_boxes">
+                              <div className="StaffPage_banner_heading">
+                    <h1>Our Staff</h1>
+                </div>
+                {visibleMembers?.map((member, index) => (
+                    index % 2 === 0 ? (
+                        <div className="staffPage_box" key={index}>
+                            <div className="staffPage_box_image">
+                                {member.image ? (
+                                    <img src={urlFor(member.image).url()} alt={member.name} />
+                                ) : (
+                                    <div className="staffPage_box_image_placeholder">No Image Available</div>
+                                )}
+                            </div>
+                            <div className="staffPage_box_content">
+                                <div className="staffPage_box_content_headers">
+                                    <h1>{member.name || 'Staff Name'}</h1>
+                                    <h3>{member.caption || 'Staff Position'}</h3>
+                                </div>
+                                <div className="staffPage_box_content_list">
+                                    {member.features?.map((feature, featureIndex) => (
+                                        <div className="staffPage_box_content_list_listItem" key={featureIndex}>
+                                            <li>
+                                                {feature}
+                                            </li>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="staffPage_box_content_button">
 
+                                    {
+                                        member.name === "KIRAN THAKKAR" ? null : <Link to={member.link}><button>Sign up Now</button></Link>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="staffPage_box_right" key={index}>
+                            <div className="staffPage_box_right_content">
+                                <div className="staffPage_box_right_outerListBox">
+                                    <div className="staffPage_box_right_content_headers">
+                                        <h1>{member.name || 'Staff Name'}</h1>
+                                        <h3>{member.caption || 'Staff Position'}</h3>
+                                    </div>
+                                    <div className="staffPage_box_right_list">
+                                        {member.features?.map((feature, featureIndex) => (
+                                            <div className="staffPage_box_right_list_listItem" key={featureIndex}>
+                                                <li>
+                                                    {feature}
+                                                </li>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="staffPage_box_right_content_button">
+                                        {
+                                            member.name === "KIRAN THAKKAR" ? null : <Link to={member.link}><button>Sign up Now</button></Link>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="staffPage_box_right_image">
+                                {member.image ? (
+                                    <img src={urlFor(member.image).url()} alt={member.name} />
+                                ) : (
+                                    <div className="staffPage_box_image_placeholder">No Image Available</div>
+                                )}
+                            </div>
+                        </div>
+                    )
+                ))}
+            </div>
                 {pageData?.boxSectionVisibility && pageData?.boxSection && (
                     <section className="aboutPage_box">
                         <div className="aboutPage_box_image">

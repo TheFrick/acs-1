@@ -44,7 +44,7 @@ const Navbar = () => {
     const navItems = [
         { to: "/", label: "Home" },
         { to: "/membership", label: "Memberships" },
-        { to: "/staff", label: "Staff" },
+        { to: "/programs", label: "Programs" },
         { to: "/gallery", label: "Gallery" },
         { to: "/about", label: "About Us" },
         { to: "https://www.aplussquash.org/", label: "A+ Squash", external: true }, // Mark this item as external

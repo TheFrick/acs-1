@@ -156,7 +156,7 @@ const Memberships = () => {
                 </div>
             )
             }
-            {
+            {/* {
                 pageData.showAdultProgramming && <div className="membershipPage_ap">
                     <div className="membershipPage_ap_heading">
                         <h1>{pageData.adultProgramming.heading}</h1>
@@ -222,7 +222,7 @@ const Memberships = () => {
                         ))}
                     </div>
                 </div>
-            }
+            } */}
             {
                 pageData.showSummerCamp &&
                 <div className="membershipPage_Sc">
