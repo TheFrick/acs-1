@@ -279,3 +279,19 @@ body {
 
 @media screen and (max-width: 480px) {
 }
+.program_btn {
+    padding: 0.75rem 1.5rem;
+    margin: 0 1rem;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.program_btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}

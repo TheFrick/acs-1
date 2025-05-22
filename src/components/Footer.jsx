@@ -44,7 +44,7 @@ const Footer = () => {
                     </div>
                     <div className="Footer_subscribe_banner_nav">
                         <div className="Footer_subscribe_banner_nav_navigation">
-                            <Link to="/">Home</Link><Link to="/membership">Memberships</Link><Link to="/staff">Staff</Link><Link to="/gallery">Gallery</Link><Link to="/about">About us</Link><a href='https://www.aplussquash.org/' target="_blank">A+ Squash</a><Link to="/contact">Contact us</Link>
+                            <Link to="/">Home</Link><Link to="/membership">Memberships</Link><Link to="/programs">Staff</Link><Link to="/gallery">Gallery</Link><Link to="/about">About us</Link><a href='https://www.aplussquash.org/' target="_blank">A+ Squash</a><Link to="/contact">Contact us</Link>
                         </div>
                         <div className="Footer_subscribe_banner_nav_socials">
                             <img src={instagram} alt="" /><img src={facebook} alt="" /><img src={youtube} alt="" />
