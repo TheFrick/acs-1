@@ -57,8 +57,6 @@ const HomePage = () => {
 
         );
 
-
-
         return () => subscription.unsubscribe();
     }, []);
 
@@ -150,16 +148,8 @@ const HomePage = () => {
                             <h2>{ourStrengthSubheading}</h2>
                             <p>{ourStrengthDescription}</p>
                         </div>
-                        <div className="Home_Ourstrength_gallery">
-                            {
-                                ourStrengthGallery?.map((item, index) => (
-                                    <div key={index}>
-                                        <Link to={item.url} target="_blank">
-                                            <img src={urlFor(item.image)} />
-                                        </Link>
-                                    </div>
-                                ))
-                            }
+                        <div className="comunity-photo">
+                            <img src="../comunity-photo.jpg" alt="" />
                         </div>
 
                     </div>

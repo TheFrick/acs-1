@@ -269,6 +269,15 @@ body {
   box-shadow: var(--shadow);
   transition: transform 0.3s ease;
 }
+.comunity-photo{
+  display: flex;
+  justify-content: center;
+}
+.comunity-photo img{
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
 
 @media (max-width: 768px) {
   .Homepage_desc {
@@ -382,4 +391,11 @@ body {
     width: 100%;
     padding: 2rem;
   }
+  .comunity-photo img{
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
 }
