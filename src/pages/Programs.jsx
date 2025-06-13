@@ -43,7 +43,7 @@ const Staff = () => {
             >
                 <Navbar />
                 <div className="StaffPage_banner_heading">
-                    <h1>{pageData?.banner?.heading.toUpperCase()}</h1>
+                    <h1>PROGRAMS</h1>
                 </div>
             </div>
 
@@ -93,6 +93,13 @@ const Staff = () => {
                                     {program?.details?.map((detail, i) => (
                                         <li key={i}>{detail}</li>
                                     ))}
+                                </div>
+                                <div className="membershipPage_ap_cards_button">
+                                    <Link to={program.link}>
+                                        <p>Register
+                                        <img style={{ marginLeft: '0.5rem' }} src={icon} alt="" />
+                                        </p>
+                                    </Link>
                                 </div>
                             </div>
                         ))}
