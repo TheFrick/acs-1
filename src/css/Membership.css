@@ -201,7 +201,7 @@ body {
 
 .membershipPage_ap_cards_card,
 .membershipPage_jp_cards_card {
-  flex: 1 1 300px;
+  flex: 0 0 350px;
   width: 350px;
   display: flex;
   flex-direction: column;
@@ -209,11 +209,11 @@ body {
   box-shadow: var(--shadow);
   border-radius: 30px;
   padding: 1.5rem;
-  min-height: 500px;
+  height: 500px;
 }
 
 .membershipPage_jp_cards_card {
-  min-height: 600px;
+  height: 600px;
 }
 
 .membershipPage_jp_cards_card {
@@ -229,7 +229,7 @@ body {
 .membershipPage_wps_cards_card_img,
 .membershipPage_ap_cards_img,
 .membershipPage_jp_cards_img {
-  height: 180px;
+  height: 260px;
 }
 
 .membershipPage_wps_cards_card_img img,
