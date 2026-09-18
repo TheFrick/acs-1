@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../css/Staff.css';
+import '../css/Membership.css';
 import ellipse from '../assets/Staff/Ellipse.png';
 import client, { urlFor } from '../sanity/sanityClient';
 import Loading from '../components/Loading';
@@ -10,6 +11,7 @@ import icon from '../assets/Home/Icon.png';
 
 const Staff = () => {
     const [pageData, setPageData] = useState(null);
+    const [staffBanner, setStaffBanner] = useState(null);
     const [selectedTab, setSelectedTab] = useState('adult'); // default to adult
 
     useEffect(() => {
@@ -33,17 +35,44 @@ const Staff = () => {
         return () => subscription.unsubscribe();
     }, []);
 
+    // Programs banner is managed in Sanity under the Staff page
+    useEffect(() => {
+        const fetchBanner = async () => {
+            try {
+                const result = await client.fetch('*[_type == "staffPage"][0].banner.backgroundImage');
+                setStaffBanner(result);
+            } catch (error) {
+                console.error('Error fetching data from Sanity:', error);
+            }
+        };
+
+        fetchBanner();
+
+        const subscription = client.listen(`*[_type == "staffPage"]`).subscribe((update) => {
+            if (update.result) {
+                setStaffBanner(update.result.banner?.backgroundImage);
+            }
+        });
+
+        return () => subscription.unsubscribe();
+    }, []);
+
     if (!pageData) return <Loading />;
+
+    const bannerImage = staffBanner || pageData?.banner?.backgroundImage;
 
     return (
         <div className='staffPage'>
             <div
                 className="StaffPage_banner"
-                style={{ backgroundImage: `url(${urlFor(pageData?.banner?.backgroundImage).url()})` }}
+                style={{
+                    backgroundImage: bannerImage ? `url(${urlFor(bannerImage).url()})` : 'none',
+                    backgroundPosition: 'center 25%'
+                }}
             >
                 <Navbar />
                 <div className="StaffPage_banner_heading">
-                    <h1>PROGRAMS</h1>
+                    <h1>OUR TEAM</h1>
                 </div>
             </div>
 
@@ -76,7 +105,7 @@ const Staff = () => {
                     <div className="membershipPage_ap_cards">
                         {pageData?.adultProgramming.programs.map((program, index) => (
                             <div key={index} className="membershipPage_ap_cards_card">
-                                <div className="membershipPage_ap_cards_img">
+                                <div className="membershipPage_ap_cards_img program-card-img">
                                     <img src={urlFor(program.image).url()} alt={program.title} />
                                 </div>
                                 <div className="membershipPage_ap_cards_title">
