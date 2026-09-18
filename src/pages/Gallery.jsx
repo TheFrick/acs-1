@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import client, { urlFor } from '../sanity/sanityClient';
 import Loading from '../components/Loading';
 import '../css/Gallery.css';
+import useBannerTitleContrast from '../hooks/useBannerTitleContrast';
 
 import ReactAudioPlayer from 'react-audio-player';
 import { buildFileUrl } from '@sanity/asset-utils';
@@ -11,6 +12,9 @@ import { buildFileUrl } from '@sanity/asset-utils';
 const Gallery = () => {
     const [pageData, setPageData] = useState(null);
     const [selectedTab, setSelectedTab] = useState("");
+    const bannerRef = useRef(null);
+    const bannerTitleRef = useRef(null);
+    const isBannerLight = useBannerTitleContrast(bannerRef, bannerTitleRef, pageData?.bannerImage ? urlFor(pageData.bannerImage).url() : null);
 
 
     const makeUrl = (filename) => {
@@ -54,9 +58,9 @@ const Gallery = () => {
 
     return (
         <div className='galleryPage'>
-            <div className="galleryPage_banner" style={{ backgroundImage: `url(${urlFor(pageData.bannerImage).url()})` }}>
+            <div className="galleryPage_banner" ref={bannerRef} style={{ backgroundImage: `url(${urlFor(pageData.bannerImage).url()})` }}>
                 <Navbar />
-                <div className="galleryPage_banner_heading">
+                <div ref={bannerTitleRef} className={`galleryPage_banner_heading ${isBannerLight ? 'banner-title--on-light' : ''}`}>
                     <h1>{pageData.bannerHeading.toUpperCase()}</h1>
                 </div>
             </div>

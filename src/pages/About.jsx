@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import client, { urlFor } from '../sanity/sanityClient';
 import Loading from '../components/Loading';
 import icon from '../assets/about/icon.png';
+import useBannerTitleContrast from '../hooks/useBannerTitleContrast';
 
 const About = () => {
     const [pageData, setPageData] = useState(null);
@@ -13,6 +14,9 @@ const About = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const reviewsRef = useRef(null);
+    const bannerRef = useRef(null);
+    const bannerTitleRef = useRef(null);
+    const isBannerLight = useBannerTitleContrast(bannerRef, bannerTitleRef, pageData?.bannerImage ? urlFor(pageData.bannerImage).url() : null);
     const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
     const location = useLocation();
 
@@ -93,10 +97,11 @@ const About = () => {
         <div className="aboutPage">
             <div
                 className="aboutPage_banner"
+                ref={bannerRef}
                 style={{ backgroundImage: `url(${urlFor(pageData?.bannerImage)?.url()})` }}
             >
                 <Navbar />
-                <div className="aboutPage_banner_heading">
+                <div ref={bannerTitleRef} className={`aboutPage_banner_heading ${isBannerLight ? 'banner-title--on-light' : ''}`}>
                     <h1>{pageData?.bannerHeading.toUpperCase() || 'ABOUT US'}</h1>
                 </div>
             </div>

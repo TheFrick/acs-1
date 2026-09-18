@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../css/Membership.css';
@@ -7,10 +7,14 @@ import icon from '../assets/Home/Icon.png';
 import Loading from '../components/Loading';
 import eventPointer from '../assets/Membership/Vector.png';
 import { Link } from 'react-router-dom';
+import useBannerTitleContrast from '../hooks/useBannerTitleContrast';
 
 
 const Memberships = () => {
     const [pageData, setPageData] = useState(null);
+    const bannerRef = useRef(null);
+    const bannerTitleRef = useRef(null);
+    const isBannerLight = useBannerTitleContrast(bannerRef, bannerTitleRef, pageData?.banner?.backgroundImage ? urlFor(pageData.banner.backgroundImage).url() : null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,9 +42,9 @@ const Memberships = () => {
 
         <div className='membershipPage'>
 
-            <div className="membershipPage_banner" style={{ backgroundImage: `url(${urlFor(pageData.banner.backgroundImage).url()})` }}>
+            <div className="membershipPage_banner" ref={bannerRef} style={{ backgroundImage: `url(${urlFor(pageData.banner.backgroundImage).url()})` }}>
                 <Navbar />
-                <div className="membershipPage_banner_heading">
+                <div ref={bannerTitleRef} className={`membershipPage_banner_heading ${isBannerLight ? 'banner-title--on-light' : ''}`}>
                     <h1>MEMBERSHIP PLANS</h1>
                 </div>
             </div>

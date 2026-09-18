@@ -18,6 +18,13 @@ a {
   color: #2a328f;
 }
 
+/* Banner titles sitting on a light part of the banner image */
+div.banner-title--on-light h1 {
+  color: var(--primary-color);
+  /* soft halo keeps it readable where the title crosses darker patches */
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
 h1 {
   font-family: var(--heading);
   font-size: var(--heading-size);

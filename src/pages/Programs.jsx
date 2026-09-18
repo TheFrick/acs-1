@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../css/Staff.css';
@@ -8,11 +8,16 @@ import client, { urlFor } from '../sanity/sanityClient';
 import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
 import icon from '../assets/Home/Icon.png';
+import useBannerTitleContrast from '../hooks/useBannerTitleContrast';
 
 const Staff = () => {
     const [pageData, setPageData] = useState(null);
     const [staffBanner, setStaffBanner] = useState(null);
     const [selectedTab, setSelectedTab] = useState('adult'); // default to adult
+    const bannerImage = staffBanner || pageData?.banner?.backgroundImage;
+    const bannerRef = useRef(null);
+    const bannerTitleRef = useRef(null);
+    const isBannerLight = useBannerTitleContrast(bannerRef, bannerTitleRef, bannerImage ? urlFor(bannerImage).url() : null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -59,19 +64,18 @@ const Staff = () => {
 
     if (!pageData) return <Loading />;
 
-    const bannerImage = staffBanner || pageData?.banner?.backgroundImage;
-
     return (
         <div className='staffPage'>
             <div
                 className="StaffPage_banner"
+                ref={bannerRef}
                 style={{
                     backgroundImage: bannerImage ? `url(${urlFor(bannerImage).url()})` : 'none',
                     backgroundPosition: 'center 25%'
                 }}
             >
                 <Navbar />
-                <div className="StaffPage_banner_heading">
+                <div ref={bannerTitleRef} className={`StaffPage_banner_heading ${isBannerLight ? 'banner-title--on-light' : ''}`}>
                     <h1>OUR TEAM</h1>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import '../css/Contact.css'
@@ -13,12 +13,16 @@ import 'leaflet/dist/leaflet.css';
 import client, { urlFor } from '../sanity/sanityClient';
 import Loading from '../components/Loading';
 import emailjs from 'emailjs-com';
+import useBannerTitleContrast from '../hooks/useBannerTitleContrast';
 
 
 
 const Contact = () => {
 
     const [pageData, setPageData] = useState(null);
+    const bannerRef = useRef(null);
+    const bannerTitleRef = useRef(null);
+    const isBannerLight = useBannerTitleContrast(bannerRef, bannerTitleRef, pageData?.bannerImage ? urlFor(pageData.bannerImage).url() : null);
     const centerPosition = [33.81118653135519, -84.42035678566103];
     const googleMapsUrl = `https://www.google.com/maps?q=${centerPosition[0]},${centerPosition[1]}`;
     const [Name, setName] = useState("");
@@ -73,9 +77,9 @@ const Contact = () => {
 
     return (
         <div className='contactPage'>
-            <div className="contactPage_banner" style={{ backgroundImage: `url(${urlFor(pageData.bannerImage).url()})` }}>
+            <div className="contactPage_banner" ref={bannerRef} style={{ backgroundImage: `url(${urlFor(pageData.bannerImage).url()})` }}>
                 <Navbar />
-                <div className="contactPage_banner_heading">
+                <div ref={bannerTitleRef} className={`contactPage_banner_heading ${isBannerLight ? 'banner-title--on-light' : ''}`}>
                     <h1>{pageData.bannerHeading.toUpperCase()}</h1>
                 </div>
             </div>
